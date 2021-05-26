@@ -35,7 +35,7 @@ namespace ChapeauUI
             // lblTest
             // 
             this.lblTest.AutoSize = true;
-            this.lblTest.Location = new System.Drawing.Point(64, 85);
+            this.lblTest.Location = new System.Drawing.Point(31, 23);
             this.lblTest.Name = "lblTest";
             this.lblTest.Size = new System.Drawing.Size(27, 15);
             this.lblTest.TabIndex = 0;
@@ -45,7 +45,7 @@ namespace ChapeauUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 450);
+            this.ClientSize = new System.Drawing.Size(467, 731);
             this.Controls.Add(this.lblTest);
             this.Name = "OrderingUI";
             this.Text = "OrderingUI";
