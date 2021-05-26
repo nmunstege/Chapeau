@@ -46,5 +46,20 @@ namespace ChapeauDAL
             return ReadTable(ExecuteSelectQuery(query, sqlParameters));
 
         }
+
+        public Item GetItem(Item item)
+        {
+            string query = "SELECT Item_no, [Items].Name, Description, Price, Quantity, [Items].SubCategory_no, [SubCategories].VAT " +
+                           "FROM [Items]" +
+                           "WHERE [Items].Item_no = @item_no";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("item_no", item.Id)
+            };
+            return ReadTable(ExecuteSelectQuery(query, sqlParameters))[0];
+
+        }
+
+        
     }
 }

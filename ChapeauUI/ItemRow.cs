@@ -28,7 +28,13 @@ namespace ChapeauUI
             var culture = new CultureInfo("nl-NL");
             lblName.Text = item.Name;
             lblPrice.Text = item.Price.ToString("C", culture);
-            btnAddItem.Tag = item.Id;
+            btnAddItem.Tag = this.item;
+        }
+
+        private void btnAddItem_Click(object sender, EventArgs e)
+        {
+            AddOrder addOrder = new AddOrder((Item)(sender as Button).Tag);
+            addOrder.Show();
         }
     }
 }

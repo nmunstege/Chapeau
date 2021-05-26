@@ -38,7 +38,7 @@ namespace ChapeauUI
             this.subCategoryFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.subCategoryFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this.subCategoryFlowLayoutPanel.Name = "subCategoryFlowLayoutPanel";
-            this.subCategoryFlowLayoutPanel.Size = new System.Drawing.Size(313, 56);
+            this.subCategoryFlowLayoutPanel.Size = new System.Drawing.Size(309, 56);
             this.subCategoryFlowLayoutPanel.TabIndex = 0;
             // 
             // CategoryWrapper
@@ -49,7 +49,7 @@ namespace ChapeauUI
             this.Controls.Add(this.subCategoryFlowLayoutPanel);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "CategoryWrapper";
-            this.Size = new System.Drawing.Size(313, 68);
+            this.Size = new System.Drawing.Size(309, 68);
             this.ResumeLayout(false);
             this.PerformLayout();
 

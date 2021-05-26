@@ -16,8 +16,12 @@ namespace ChapeauUI
     {
         SubCategoryService subCategoryService;
         ItemService itemService;
+        Button subCategoryButton;
+        
 
         bool IsActive { get; set; }
+
+        
         public CategoryWrapper(SubCategory subCategory)
         {
             subCategoryService = new SubCategoryService();
@@ -25,6 +29,10 @@ namespace ChapeauUI
             InitializeComponent();
             IsActive = false;
             DrawSubCategory(subCategory);
+
+        }
+        private void subCategoryButton_Click(object sender, EventArgs e)
+        {
             
         }
 
@@ -33,17 +41,24 @@ namespace ChapeauUI
             subCategoryFlowLayoutPanel.FlowDirection = FlowDirection.TopDown;
             subCategoryFlowLayoutPanel.WrapContents = false;
             subCategoryFlowLayoutPanel.AutoSize = true;
-            Button subCategoryButton = new Button()
+            subCategoryButton = new Button()
             {
                 Text = subCategory.Name,
                 AutoSize = false,
-                Width = 313,
+                Width = 309,
                 Height = 40,
                 Location = new Point(0, 0),
-                Margin = new Padding(0)
+                Margin = new Padding(0),
+                Tag = subCategory
             };
+
+            
+            subCategoryButton.Click += new EventHandler(subCategoryButton_Click);
             subCategoryFlowLayoutPanel.Controls.Add(subCategoryButton);
-            subCategoryFlowLayoutPanel.Controls.Add(DrawSubCategoryItems(subCategory));
+            if (!IsActive)
+            {
+                subCategoryFlowLayoutPanel.Controls.Add(DrawSubCategoryItems(subCategory));
+            }
 
            
         }

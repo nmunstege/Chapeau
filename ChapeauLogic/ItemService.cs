@@ -24,5 +24,10 @@ namespace ChapeauLogic
             List<Item> items = itemDao.GetItemBySubcategory(subCategory);
             return items;
         }
+
+        public Item GetItem(Item item)
+        {
+            return itemDao.GetItem(item);
+        }
     }
 }

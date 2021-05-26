@@ -38,7 +38,7 @@ namespace ChapeauUI
                 categoryTabPage.BackColor = Color.White;
                 
                 FlowLayoutPanel categoryFlowLayouPanel = new FlowLayoutPanel();
-                categoryFlowLayouPanel.Width = 313;
+                categoryFlowLayouPanel.Width = 309;
                 categoryFlowLayouPanel.AutoSize = true;
                 categoryFlowLayouPanel.WrapContents = false;
                 categoryFlowLayouPanel.FlowDirection = FlowDirection.TopDown;

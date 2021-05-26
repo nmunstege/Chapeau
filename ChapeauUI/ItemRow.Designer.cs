@@ -51,6 +51,7 @@ namespace ChapeauUI
             this.btnAddItem.TabIndex = 2;
             this.btnAddItem.Text = "Add";
             this.btnAddItem.UseVisualStyleBackColor = true;
+            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
             // lblPrice
             // 
@@ -70,7 +71,7 @@ namespace ChapeauUI
             this.Controls.Add(this.lblName);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ItemRow";
-            this.Size = new System.Drawing.Size(313, 50);
+            this.Size = new System.Drawing.Size(309, 50);
             this.ResumeLayout(false);
 
         }
