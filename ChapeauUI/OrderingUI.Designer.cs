@@ -29,33 +29,32 @@ namespace ChapeauUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTest = new System.Windows.Forms.Label();
+            this.tabControlMenu = new System.Windows.Forms.TabControl();
             this.SuspendLayout();
             // 
-            // lblTest
+            // tabControlMenu
             // 
-            this.lblTest.AutoSize = true;
-            this.lblTest.Location = new System.Drawing.Point(31, 23);
-            this.lblTest.Name = "lblTest";
-            this.lblTest.Size = new System.Drawing.Size(27, 15);
-            this.lblTest.TabIndex = 0;
-            this.lblTest.Text = "Test";
+            this.tabControlMenu.Location = new System.Drawing.Point(10, 70);
+            this.tabControlMenu.Name = "tabControlMenu";
+            this.tabControlMenu.SelectedIndex = 0;
+            this.tabControlMenu.Size = new System.Drawing.Size(340, 440);
+            this.tabControlMenu.TabIndex = 0;
             // 
             // OrderingUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 731);
-            this.Controls.Add(this.lblTest);
+            this.ClientSize = new System.Drawing.Size(360, 640);
+            this.Controls.Add(this.tabControlMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "OrderingUI";
             this.Text = "OrderingUI";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblTest;
+        private System.Windows.Forms.TabControl tabControlMenu;
     }
 }

@@ -10,7 +10,7 @@ namespace ChapeauModel
     {
         int id;
         double price;
-        int Id { get { return id; } }
+        public int Id { get { return id; } }
         public string Name { get; set; }
         public string Description { get; set; }
         public double Price { get { return price + (price * (VAT / 100)); } set { price = value; } }
