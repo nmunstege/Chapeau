@@ -13,6 +13,8 @@ using System.Globalization;
 
 namespace ChapeauUI
 {
+   
+
     public partial class ItemRow : UserControl
     {
         Item item;
@@ -28,7 +30,15 @@ namespace ChapeauUI
             var culture = new CultureInfo("nl-NL");
             lblName.Text = item.Name;
             lblPrice.Text = item.Price.ToString("C", culture);
-            btnAddItem.Tag = item.Id;
+            btnAddItem.Tag = this.item;
+        }
+
+        private void btnAddItem_Click(object sender, EventArgs e)
+        {
+            Item item = (Item)(sender as Button).Tag;
+            AddOrderForm addOrderForm = new AddOrderForm(item);
+            addOrderForm.Show();
+
         }
     }
 }

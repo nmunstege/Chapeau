@@ -38,7 +38,7 @@ namespace ChapeauUI
                 categoryTabPage.BackColor = Color.White;
                 
                 FlowLayoutPanel categoryFlowLayouPanel = new FlowLayoutPanel();
-                categoryFlowLayouPanel.Width = 313;
+                categoryFlowLayouPanel.Width = 309;
                 categoryFlowLayouPanel.AutoSize = true;
                 categoryFlowLayouPanel.WrapContents = false;
                 categoryFlowLayouPanel.FlowDirection = FlowDirection.TopDown;
@@ -46,6 +46,8 @@ namespace ChapeauUI
                 foreach(SubCategory subCategory in subCategoryService.GetSubCategoriesByCategory(category))
                 {
                     CategoryWrapper categoryWrapper = new CategoryWrapper(subCategory);
+
+                    
                     categoryFlowLayouPanel.Controls.Add(categoryWrapper);
                 }
                 categoryTabPage.Controls.Add(categoryFlowLayouPanel);

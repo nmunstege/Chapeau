@@ -16,15 +16,35 @@ namespace ChapeauUI
     {
         SubCategoryService subCategoryService;
         ItemService itemService;
+        Button subCategoryButton;
+        SubCategory currentSubCategory;
+        List<FlowLayoutPanel> flowLayoutPanels = new List<FlowLayoutPanel>();
 
-        bool IsActive { get; set; }
+        
         public CategoryWrapper(SubCategory subCategory)
         {
             subCategoryService = new SubCategoryService();
             itemService = new ItemService();
             InitializeComponent();
-            IsActive = false;
+           
             DrawSubCategory(subCategory);
+
+        }
+        private void subCategoryButton_Click(object sender, EventArgs e)
+        {
+            foreach(FlowLayoutPanel panel in flowLayoutPanels)
+            {
+                if(panel.Tag == (sender as Button).Tag)
+                {
+                    if(panel.Visible == false)
+                    {
+                        panel.Show();
+                    }else
+                    {
+                        panel.Hide();
+                    }
+                } 
+            }
             
         }
 
@@ -33,19 +53,27 @@ namespace ChapeauUI
             subCategoryFlowLayoutPanel.FlowDirection = FlowDirection.TopDown;
             subCategoryFlowLayoutPanel.WrapContents = false;
             subCategoryFlowLayoutPanel.AutoSize = true;
-            Button subCategoryButton = new Button()
+            subCategoryButton = new Button()
             {
                 Text = subCategory.Name,
                 AutoSize = false,
-                Width = 313,
+                Width = 309,
                 Height = 40,
                 Location = new Point(0, 0),
-                Margin = new Padding(0)
+                Margin = new Padding(0),
+                Tag = subCategory
             };
-            subCategoryFlowLayoutPanel.Controls.Add(subCategoryButton);
-            subCategoryFlowLayoutPanel.Controls.Add(DrawSubCategoryItems(subCategory));
 
-           
+            
+            subCategoryButton.Click += new EventHandler(subCategoryButton_Click);
+            subCategoryFlowLayoutPanel.Controls.Add(subCategoryButton);
+
+            FlowLayoutPanel itemsFlowPanel = DrawSubCategoryItems(subCategory);
+            itemsFlowPanel.Tag = subCategory;
+            itemsFlowPanel.Hide();
+            flowLayoutPanels.Add(itemsFlowPanel);
+
+            subCategoryFlowLayoutPanel.Controls.Add(itemsFlowPanel);  
         }
 
         private FlowLayoutPanel DrawSubCategoryItems(SubCategory subCategory)
