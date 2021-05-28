@@ -13,6 +13,8 @@ using System.Globalization;
 
 namespace ChapeauUI
 {
+   
+
     public partial class ItemRow : UserControl
     {
         Item item;
@@ -33,8 +35,10 @@ namespace ChapeauUI
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            AddOrder addOrder = new AddOrder((Item)(sender as Button).Tag);
-            addOrder.Show();
+            Item item = (Item)(sender as Button).Tag;
+            AddOrderForm addOrderForm = new AddOrderForm(item);
+            addOrderForm.Show();
+
         }
     }
 }

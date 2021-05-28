@@ -46,6 +46,8 @@ namespace ChapeauUI
                 foreach(SubCategory subCategory in subCategoryService.GetSubCategoriesByCategory(category))
                 {
                     CategoryWrapper categoryWrapper = new CategoryWrapper(subCategory);
+
+                    
                     categoryFlowLayouPanel.Controls.Add(categoryWrapper);
                 }
                 categoryTabPage.Controls.Add(categoryFlowLayouPanel);

@@ -34,6 +34,7 @@ namespace ChapeauUI
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.AddOrderContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // tabControlMenu
@@ -86,11 +87,20 @@ namespace ChapeauUI
             this.button3.Text = "Table Overview";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // AddOrderContainer
+            // 
+            this.AddOrderContainer.AutoSize = true;
+            this.AddOrderContainer.Location = new System.Drawing.Point(155, 26);
+            this.AddOrderContainer.Name = "AddOrderContainer";
+            this.AddOrderContainer.Size = new System.Drawing.Size(65, 19);
+            this.AddOrderContainer.TabIndex = 4;
+            // 
             // OrderingUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(360, 640);
+            this.Controls.Add(this.AddOrderContainer);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
@@ -98,8 +108,10 @@ namespace ChapeauUI
             this.Controls.Add(this.tabControlMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "OrderingUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OrderingUI";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -110,5 +122,6 @@ namespace ChapeauUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.FlowLayoutPanel AddOrderContainer;
     }
 }
