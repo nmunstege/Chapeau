@@ -6,5 +6,6 @@ namespace ChapeauDAL
 {
     class LogInDao
     {
+        string user;
     }
 }
