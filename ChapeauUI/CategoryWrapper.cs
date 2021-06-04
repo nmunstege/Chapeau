@@ -19,7 +19,8 @@ namespace ChapeauUI
         Button subCategoryButton;
         SubCategory currentSubCategory;
         List<FlowLayoutPanel> flowLayoutPanels = new List<FlowLayoutPanel>();
-
+        public EventHandler ButtonClick;
+        List<OrderItem> OrderItems;
         
         public CategoryWrapper(SubCategory subCategory)
         {
@@ -94,6 +95,15 @@ namespace ChapeauUI
 
 
 
+        }
+
+        protected void Button_Click(object sender, EventArgs e)
+        {
+            if (this.ButtonClick != null)
+            {
+                this.ButtonClick(this, e);
+
+            }
         }
     }
 }

@@ -31,7 +31,7 @@ namespace ChapeauUI
         {
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnAddToOrder = new System.Windows.Forms.Button();
             this.btnCancelAddOrder = new System.Windows.Forms.Button();
             this.lblMessage = new System.Windows.Forms.Label();
             this.lblAddItemHeader = new System.Windows.Forms.Label();
@@ -48,7 +48,6 @@ namespace ChapeauUI
             this.label2.Size = new System.Drawing.Size(91, 15);
             this.label2.TabIndex = 15;
             this.label2.Text = "Add Comment?";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBox2
             // 
@@ -59,15 +58,16 @@ namespace ChapeauUI
             this.textBox2.TabIndex = 14;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // button4
+            // btnAddToOrder
             // 
-            this.button4.Location = new System.Drawing.Point(150, 280);
-            this.button4.Margin = new System.Windows.Forms.Padding(0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 40);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Add to Order";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnAddToOrder.Location = new System.Drawing.Point(150, 280);
+            this.btnAddToOrder.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddToOrder.Name = "btnAddToOrder";
+            this.btnAddToOrder.Size = new System.Drawing.Size(100, 40);
+            this.btnAddToOrder.TabIndex = 9;
+            this.btnAddToOrder.Text = "Add to Order";
+            this.btnAddToOrder.UseVisualStyleBackColor = true;
+            this.btnAddToOrder.Click += new System.EventHandler(this.btnAddToOrder_Click);
             // 
             // btnCancelAddOrder
             // 
@@ -82,12 +82,11 @@ namespace ChapeauUI
             // 
             // lblMessage
             // 
-            this.lblMessage.Location = new System.Drawing.Point(12, 230);
+            this.lblMessage.Location = new System.Drawing.Point(0, 230);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(240, 40);
             this.lblMessage.TabIndex = 8;
             this.lblMessage.Text = "label1";
-            this.lblMessage.Click += new System.EventHandler(this.fuck_Click);
             // 
             // lblAddItemHeader
             // 
@@ -142,14 +141,14 @@ namespace ChapeauUI
             this.Controls.Add(this.btnRemoveQuantity);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnAddToOrder);
             this.Controls.Add(this.btnCancelAddOrder);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.lblAddItemHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddOrderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddOrderForm";
+            this.Text = "v";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,7 +158,7 @@ namespace ChapeauUI
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAddToOrder;
         private System.Windows.Forms.Button btnCancelAddOrder;
         private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.Label lblAddItemHeader;

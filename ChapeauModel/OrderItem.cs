@@ -15,13 +15,12 @@ namespace ChapeauModel
         public string Comment { get; set; }
         public DateTime TimeStamp { get; set; }
 
-        public OrderItem(int orderId, int itemId, int status, int count, DateTime timeStamp)
+        public OrderItem( int itemId,int orderId, int count, string comment)
         {
-            OrderId = orderId;
             ItemId = itemId;
-            Status = (Status)status;
+            OrderId = orderId;
             Count = count;
-            TimeStamp = TimeStamp;
+            Comment = comment;
         }
 
         public OrderItem()

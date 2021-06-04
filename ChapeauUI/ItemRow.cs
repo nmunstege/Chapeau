@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ChapeauModel;
 using ChapeauLogic;
 using System.Globalization;
+using ChapeauUI;
 
 namespace ChapeauUI
 {
@@ -17,7 +18,17 @@ namespace ChapeauUI
 
     public partial class ItemRow : UserControl
     {
+
         Item item;
+        List<OrderItem> OrderItems { get; set; }
+        AddOrderForm addOrderForm;
+        [Browsable(true)]
+        [Category("Action")]
+        [Description("Invoked when user clicks button")]
+        public event EventHandler ButtonClick;
+
+
+
         public ItemRow(Item item)
         {
             InitializeComponent();
@@ -35,10 +46,20 @@ namespace ChapeauUI
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            Item item = (Item)(sender as Button).Tag;
-            AddOrderForm addOrderForm = new AddOrderForm(item);
-            addOrderForm.Show();
+            //Item item = (Item)(sender as Button).Tag;
+            //Order order = (Order)this.ParentForm.Tag;
+            //addOrderForm = new AddOrderForm(item, order);
+            var parent = this.Parent.Parent as OrderingUI;
+             parent.SelectedItem = this.item;
+            //addOrderForm.Show();
+            if (this.ButtonClick != null)
+                this.ButtonClick(this, e);
 
+            
+            MessageBox.Show(item.Name);
         }
+
+        
+        
     }
 }
