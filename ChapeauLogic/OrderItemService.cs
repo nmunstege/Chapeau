@@ -11,23 +11,15 @@ namespace ChapeauLogic
 {
     public class OrderItemService
     {
-        OrderItemDao orderItemDao;
-        List<OrderItem> orderItems;
+        private OrderItemDao orderItemDao;
         
 
         public OrderItemService()
         {
             orderItemDao = new OrderItemDao();
-            orderItems = new List<OrderItem>();
         }
         
-        public List<OrderItem> AddOrderItemtoTemp(Order order, Item item, int count, string comment)
-        {
-            OrderItem orderItem = new OrderItem(item.Id, order.Id, count, comment);
-            orderItems.Add(orderItem);
-            return orderItems;
-        }
-        public void AddOrderItem()
+        public void AddOrderItem(List<OrderItem> orderItems)
         {
            foreach(OrderItem orderItem in orderItems)
             {

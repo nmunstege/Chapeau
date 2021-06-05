@@ -32,9 +32,8 @@ namespace ChapeauUI
             this.tabControlMenu = new System.Windows.Forms.TabControl();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnShowOrderTemp = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.AddOrderContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // tabControlMenu
@@ -69,14 +68,15 @@ namespace ChapeauUI
             this.label1.Text = "Menu";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button2
+            // btnShowOrderTemp
             // 
-            this.button2.Location = new System.Drawing.Point(258, 10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 35);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "View Order";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnShowOrderTemp.Location = new System.Drawing.Point(258, 10);
+            this.btnShowOrderTemp.Name = "btnShowOrderTemp";
+            this.btnShowOrderTemp.Size = new System.Drawing.Size(90, 35);
+            this.btnShowOrderTemp.TabIndex = 3;
+            this.btnShowOrderTemp.Text = "View Order";
+            this.btnShowOrderTemp.UseVisualStyleBackColor = true;
+            this.btnShowOrderTemp.Click += new System.EventHandler(this.btnShowOrderTemp_Click);
             // 
             // button3
             // 
@@ -87,22 +87,13 @@ namespace ChapeauUI
             this.button3.Text = "Table Overview";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // AddOrderContainer
-            // 
-            this.AddOrderContainer.AutoSize = true;
-            this.AddOrderContainer.Location = new System.Drawing.Point(155, 26);
-            this.AddOrderContainer.Name = "AddOrderContainer";
-            this.AddOrderContainer.Size = new System.Drawing.Size(65, 19);
-            this.AddOrderContainer.TabIndex = 4;
-            // 
             // OrderingUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(360, 640);
-            this.Controls.Add(this.AddOrderContainer);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnShowOrderTemp);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControlMenu);
@@ -111,7 +102,6 @@ namespace ChapeauUI
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OrderingUI";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -120,8 +110,7 @@ namespace ChapeauUI
         private System.Windows.Forms.TabControl tabControlMenu;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnShowOrderTemp;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.FlowLayoutPanel AddOrderContainer;
     }
 }

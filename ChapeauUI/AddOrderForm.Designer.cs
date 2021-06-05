@@ -95,6 +95,7 @@ namespace ChapeauUI
             this.lblAddItemHeader.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblAddItemHeader.Location = new System.Drawing.Point(0, 0);
             this.lblAddItemHeader.Name = "lblAddItemHeader";
+            this.lblAddItemHeader.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.lblAddItemHeader.Size = new System.Drawing.Size(260, 25);
             this.lblAddItemHeader.TabIndex = 7;
             this.lblAddItemHeader.Text = "label1";
@@ -148,7 +149,6 @@ namespace ChapeauUI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddOrderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "v";
             this.ResumeLayout(false);
             this.PerformLayout();
 

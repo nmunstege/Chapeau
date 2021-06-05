@@ -19,9 +19,8 @@ namespace ChapeauUI
         SubCategoryService subCategoryService;
         public OrderItemService orderItemService;
         public Item SelectedItem { get; set; }
-        
-        public List<OrderItem> TempOrderItems { get; set; }
 
+        public List<OrderItem> TempOrderItems { get; set; }
         public Order CurrentOrder { get; set; }
         public OrderingUI(Order order)
         {
@@ -29,31 +28,38 @@ namespace ChapeauUI
             categoryService = new CategoryService();
             subCategoryService = new SubCategoryService();
             CurrentOrder = order;
+            TempOrderItems = new List<OrderItem>();
 
             InitializeComponent();
             DrawMenuTabControl();
         }
 
-        
-        
+
+
 
         private void DrawMenuTabControl()
         {
-            foreach(Category category in categoryService.GetAllCategories())
+            //
+            // Nazirou
+            // Draws Each main Category Tab Pages (Dinner, Lunch, and Drinks)
+            foreach (Category category in categoryService.GetAllCategories())
             {
                 TabPage categoryTabPage = new TabPage();
                 categoryTabPage.Text = category.Name;
                 categoryTabPage.AutoScroll = true;
                 categoryTabPage.Margin = new Padding(0);
                 categoryTabPage.BackColor = Color.White;
-                
+
                 FlowLayoutPanel categoryFlowLayouPanel = new FlowLayoutPanel();
                 categoryFlowLayouPanel.Width = 309;
                 categoryFlowLayouPanel.AutoSize = true;
                 categoryFlowLayouPanel.WrapContents = false;
                 categoryFlowLayouPanel.FlowDirection = FlowDirection.TopDown;
                 categoryFlowLayouPanel.Margin = new Padding(0);
-                foreach(SubCategory subCategory in subCategoryService.GetSubCategoriesByCategory(category))
+                //
+                // Nazirou
+                // Draws each Sub Category Button in FlowPanel
+                foreach (SubCategory subCategory in subCategoryService.GetSubCategoriesByCategory(category))
                 {
                     FlowLayoutPanel subCategoryWrapper = new FlowLayoutPanel();
                     subCategoryWrapper.Width = 309;
@@ -72,8 +78,9 @@ namespace ChapeauUI
                         Tag = subCategory
                     };
                     subCategoryWrapper.Controls.Add(subCategoryButton);
-
-
+                    //
+                    // Nazirou
+                    // Draws list of ItemRows for each Item in sub category in itemsWrapper FlowPannel
                     FlowLayoutPanel itemsWrapper = new FlowLayoutPanel()
                     {
                         FlowDirection = FlowDirection.TopDown,
@@ -83,9 +90,9 @@ namespace ChapeauUI
 
                     foreach (Item item in itemService.GetItemsBySubCategory(subCategory))
                     {
-                        ItemRow itemRow = new ItemRow(item);
+                        ItemRow itemRow = new ItemRow(item, CurrentOrder);
                         itemsWrapper.Controls.Add(itemRow);
-                        itemRow.ButtonClick += new EventHandler(addItem_ButtonClick);
+
                     }
 
                     subCategoryWrapper.Controls.Add(itemsWrapper);
@@ -98,32 +105,11 @@ namespace ChapeauUI
             }
         }
 
-        private void addItem_ButtonClick(object sender, EventArgs e)
+        private void btnShowOrderTemp_Click(object sender, EventArgs e)
         {
-            //Order order = CurrentOrder;
-            //AddOrderForm addOrderForm = new AddOrderForm(item, order);
-
-            //addOrderForm.Show();
+            TempOrderItemsForm orderItemsForm = new TempOrderItemsForm(this);
+            orderItemsForm.ShowDialog();
         }
-
-
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            orderItemService.AddOrderItem();
-        }
-
-        //private void AddOrderItem_ButtonClick(object sender, EventArgs e)
-        //{
-        //    Item item = (Item)(sender as Button).Tag;
-        //    Order order = (Order)this.ParentForm.Tag;
-        //    AddOrderForm addOrderForm = new AddOrderForm(item, order);
-
-        //    addOrderForm.Show();
-        //    this.OrderItems.AddRange(addOrderForm.OrderItems); 
-        //}
-
-
 
     }
 }

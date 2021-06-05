@@ -61,7 +61,7 @@ namespace ChapeauUI
             this.lblCount.Size = new System.Drawing.Size(38, 50);
             this.lblCount.TabIndex = 0;
             this.lblCount.Text = "label1";
-            this.lblCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // OrderItemRowTemp
             // 

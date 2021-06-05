@@ -53,8 +53,8 @@ namespace ChapeauDAL
                            "VALUES (@itemId, @orderId, 1, @count, @comment)";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("itemId", orderItem.ItemId),
-                new SqlParameter("orderId", orderItem.OrderId),
+                new SqlParameter("itemId", orderItem.Item.Id),
+                new SqlParameter("orderId", orderItem.Order.Id),
                 new SqlParameter("count", orderItem.Count),
                 new SqlParameter("comment", orderItem.Comment){ IsNullable = true}
             };

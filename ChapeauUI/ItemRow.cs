@@ -14,12 +14,13 @@ using ChapeauUI;
 
 namespace ChapeauUI
 {
-   
+
 
     public partial class ItemRow : UserControl
     {
 
-        Item item;
+        Item Item { get; set; }
+        Order Order { get; set; }
         List<OrderItem> OrderItems { get; set; }
         AddOrderForm addOrderForm;
         [Browsable(true)]
@@ -29,37 +30,41 @@ namespace ChapeauUI
 
 
 
-        public ItemRow(Item item)
+        public ItemRow(Item item, Order order)
         {
             InitializeComponent();
-            this.item = item;
+            Item = item;
+            Order = order;
             FillItems();
         }
 
         private void FillItems()
         {
             var culture = new CultureInfo("nl-NL");
-            lblName.Text = item.Name;
-            lblPrice.Text = item.Price.ToString("C", culture);
-            btnAddItem.Tag = this.item;
+            lblName.Text = Item.Name;
+            lblPrice.Text = Item.Price.ToString("C", culture);
         }
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            //Item item = (Item)(sender as Button).Tag;
-            //Order order = (Order)this.ParentForm.Tag;
-            //addOrderForm = new AddOrderForm(item, order);
-            var parent = this.Parent.Parent as OrderingUI;
-             parent.SelectedItem = this.item;
-            //addOrderForm.Show();
-            if (this.ButtonClick != null)
-                this.ButtonClick(this, e);
+            var orderingUI = this.FindForm() as OrderingUI;
+            orderingUI.SelectedItem = Item;
+            addOrderForm = new AddOrderForm(Item, Order, orderingUI);
 
-            
-            MessageBox.Show(item.Name);
+            addOrderForm.ShowDialog();
+
+            string fuck = "";
+
+            foreach (OrderItem o in orderingUI.TempOrderItems)
+
+            {
+                fuck += $"{o.Item.Name} x {o.Count} ({o.Comment}) \n";
+            }
+
+            MessageBox.Show(fuck);
         }
 
-        
-        
+
+
     }
 }
