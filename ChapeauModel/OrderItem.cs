@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ChapeauModel
 {
     public class OrderItem
@@ -14,6 +15,9 @@ namespace ChapeauModel
         public int Count { get; set; }
         public string Comment { get; set; }
         public DateTime TimeStamp { get; set; }
+       public List<Item> Items { get; set; }
+       
+     
 
         public OrderItem( int itemId,int orderId, int count, string comment)
         {
