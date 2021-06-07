@@ -25,7 +25,8 @@ namespace ChapeauDAL
                     Status = (Status)dr["Status"],
                     Count = (int)dr["Count"],
                     Comment = (string)dr["Comment"],
-                    TimeStamp = (DateTime)dr["Timestamp"]
+                    TimeStamp = (DateTime)dr["Timestamp"],
+                   
                 };
 
                 orderItems.Add(orderItem);

@@ -13,7 +13,7 @@ namespace ChapeauLogic
     {
         OrderItemDao orderItemDao;
         List<OrderItem> orderItems;
-        
+        Order order;
 
         public OrderItemService()
         {
@@ -35,6 +35,9 @@ namespace ChapeauLogic
             }
         }
 
-
+        public void FillOrderWithOrderItems(Order order)
+        {
+             order.OrderItems= orderItemDao.GetOrderItemsByOrder(order);
+        }
     }
 }
