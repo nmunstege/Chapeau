@@ -13,7 +13,6 @@ namespace ChapeauLogic
     {
         OrderItemDao orderItemDao;
         List<OrderItem> orderItems;
-        Order order;
 
         public OrderItemService()
         {
