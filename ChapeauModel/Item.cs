@@ -16,7 +16,7 @@ namespace ChapeauModel
         public double Price { get { return price + (price * (VAT / 100)); } set { price = value; } }
         public int Quantity { get; set; }
         public int SubCategory { get; set; }
-        private double VAT { get; set; }
+        public double VAT { get; set; }
 
         public Item()
         {
@@ -32,6 +32,10 @@ namespace ChapeauModel
             Quantity = quantity;
             SubCategory = subCategory;
             VAT = vat;
+        }
+        public double VATCalc(Item item)
+        {
+            return (item.VAT / 100) * price;
         }
     }
 }

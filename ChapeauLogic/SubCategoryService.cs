@@ -22,5 +22,10 @@ namespace ChapeauLogic
         {
             return subCategoryDao.GetSubCategoriesByCategory(category);
         }
+
+        public List<SubCategory> GetSubCategories()
+        {
+            return subCategoryDao.GetSubCategories();
+        }
     }
 }
