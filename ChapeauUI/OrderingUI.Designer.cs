@@ -71,12 +71,12 @@ namespace ChapeauUI
             // 
             // btnShowOrderTemp
             // 
-            this.button2.Location = new System.Drawing.Point(258, 10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 35);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "View Order";
-            this.button2.UseVisualStyleBackColor = true;
+            //this.button2.Location = new System.Drawing.Point(258, 10);
+            //this.button2.Name = "button2";
+            //this.button2.Size = new System.Drawing.Size(90, 35);
+            //this.button2.TabIndex = 3;
+            //this.button2.Text = "View Order";
+            //this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -90,18 +90,18 @@ namespace ChapeauUI
             // 
             // AddOrderContainer
             // 
-            this.AddOrderContainer.AutoSize = true;
-            this.AddOrderContainer.Location = new System.Drawing.Point(155, 26);
-            this.AddOrderContainer.Name = "AddOrderContainer";
-            this.AddOrderContainer.Size = new System.Drawing.Size(65, 19);
-            this.AddOrderContainer.TabIndex = 4;
+            //this.AddOrderContainer.AutoSize = true;
+            //this.AddOrderContainer.Location = new System.Drawing.Point(155, 26);
+            //this.AddOrderContainer.Name = "AddOrderContainer";
+            //this.AddOrderContainer.Size = new System.Drawing.Size(65, 19);
+            //this.AddOrderContainer.TabIndex = 4;
             // 
             // OrderingUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(360, 640);
-            this.Controls.Add(this.AddOrderContainer);
+            //this.Controls.Add(this.AddOrderContainer);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnShowOrderTemp);
             this.Controls.Add(this.label1);
