@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChapeauLogic
 {
-    class BillService
+    public class BillService
     {
     }
 }

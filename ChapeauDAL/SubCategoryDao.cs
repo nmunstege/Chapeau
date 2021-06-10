@@ -40,5 +40,15 @@ namespace ChapeauDAL
 
             return ReadTable(ExecuteSelectQuery(query, sqlParameters));
         }
+
+        public List<SubCategory> GetSubCategories()
+        {
+            string query = "SELECT SubCategory_no, Category_no, Name, VAT " +
+                           "FROM [SubCategories] ";
+
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTable(ExecuteSelectQuery(query, sqlParameters));
+            
+        }
     }
 }

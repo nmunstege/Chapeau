@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ChapeauModel
 {
     public class Order
@@ -18,15 +19,17 @@ namespace ChapeauModel
 
         public Order()
         {
-            //
+            
         }
 
         public Order(int id, int userId, int billId, int tableId)
         {
+           
             this.id = id;
             UserId = userId;
             BillId = billId;
             TableId = tableId;
+            
         }
 
 

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,11 +36,17 @@ namespace ChapeauDAL
             return orders;
         }
 
-        //public List<Order> GetOrderByActiveTable(Table table)
-        //{
-        //    string query = "SELECT Order_no, Table_no, User_no, Bill_no" +
-        //                   "FROM Orders " +
-        //                   "WHERE Table_no = @tablId ";
-        //}
+        public List<Order> GetOrderByOrderId(int orderId)
+        {
+            string query = "SELECT Order_no, Item_no, Bill_no " +
+                               "FROM Orders " +
+                               "WHERE Order_no = @orderId";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("orderId", orderId)
+            };
+            return ReadTable(ExecuteSelectQuery(query, sqlParameters));
+
+        }
     }
 }

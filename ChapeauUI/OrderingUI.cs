@@ -133,5 +133,17 @@ namespace ChapeauUI
             orderItemsForm.ShowDialog();
         }
 
+        //private void AddOrderItem_ButtonClick(object sender, EventArgs e)
+        //{
+        //    Item item = (Item)(sender as Button).Tag;
+        //    Order order = (Order)this.ParentForm.Tag;
+        //    AddOrderForm addOrderForm = new AddOrderForm(item, order);
+
+        //    addOrderForm.Show();
+        //    this.OrderItems.AddRange(addOrderForm.OrderItems); 
+        //}
+
+
+
     }
 }

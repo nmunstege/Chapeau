@@ -29,6 +29,9 @@ namespace ChapeauLogic
             }
         }
 
-
+        public void FillOrderWithOrderItems(Order order)
+        {
+             order.OrderItems= orderItemDao.GetOrderItemsByOrder(order);
+        }
     }
 }

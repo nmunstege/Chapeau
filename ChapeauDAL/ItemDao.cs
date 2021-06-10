@@ -72,6 +72,17 @@ namespace ChapeauDAL
 
         }
 
-        
+        public Item GetItemsInOrder(int orderItemId)
+        {
+            string query = "SELECT Item_no, [Items].Name, Description, Price, Quantity, [Items].SubCategory_no, VAT " +
+                           "FROM [Items]" +
+                           "JOIN SubCategories ON Items.SubCategory_no = SubCategories.SubCategory_no WHERE Item_no = @itemNo";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("itemNo", orderItemId)
+            };
+            return ReadTable(ExecuteSelectQuery(query, sqlParameters))[0];
+        }
+
     }
 }

@@ -29,5 +29,16 @@ namespace ChapeauLogic
         {
             return itemDao.GetItem(item);
         }
+
+        //public void FillOrderItemItems(List<OrderItem>orderItems)
+        //{
+        //    List<Item> ordeItems = new List<Item>();
+        //    foreach (OrderItem item in orderItems)
+        //    {
+        //       Item individualItem = itemDao.GetItemsInOrder(item.ItemId);
+        //        ordeItems.Add(individualItem);
+        //        item.Item = ordeItems;
+        //    }
+        //}
     }
 }
