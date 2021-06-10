@@ -21,7 +21,7 @@ namespace ChapeauLogic
 
         public double CalculateVat(OrderItem orderItem)
         {
-            return orderItem.Item.VATCalc(orderItem.Item) * orderItem.Count;
+            return orderItem.Item.VATCalc(orderItem) * orderItem.Count;
         }
 
         public double LowVATCategory(Item item)

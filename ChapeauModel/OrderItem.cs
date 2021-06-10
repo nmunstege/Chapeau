@@ -11,6 +11,7 @@ namespace ChapeauModel
     {
         public int OrderId { get; set; }
         public int ItemId { get; set; }
+        public Item Item { get; set; }
         public Status Status { get; set; }
         public int Count { get; set; }
         public string Comment { get; set; }
