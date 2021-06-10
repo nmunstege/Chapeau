@@ -11,8 +11,10 @@ using ChapeauModel;
 
 namespace ChapeauDAL
 {
+    
     public class OrderItemDao : BaseDao
     {
+        ItemDao itemDao = new ItemDao();
         private List<OrderItem> ReadTable(DataTable dataTable)
         {
             List<OrderItem> orderItems = new List<OrderItem>();
@@ -25,7 +27,9 @@ namespace ChapeauDAL
                     Status = (Status)dr["Status"],
                     Count = (int)dr["Count"],
                     Comment = (string)dr["Comment"],
-                    TimeStamp = (DateTime)dr["Timestamp"]
+                    TimeStamp = (DateTime)dr["Timestamp"],
+                    item =itemDao.GetItemsInOrder((int)dr["Item_no"])
+                   
                 };
 
                 orderItems.Add(orderItem);
