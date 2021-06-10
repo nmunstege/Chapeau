@@ -12,17 +12,19 @@ namespace ChapeauLogic
     public class OrderItemService
     {
         private OrderItemDao orderItemDao;
-        
+        private ItemDao itemDao;
 
         public OrderItemService()
         {
             orderItemDao = new OrderItemDao();
+            itemDao = new ItemDao();
         }
         
         public void AddOrderItem(List<OrderItem> orderItems)
         {
            foreach(OrderItem orderItem in orderItems)
             {
+                orderItem.Item = itemDao.GetItemById(orderItem.Item.Id);
                 orderItemDao.AddOrderItem(orderItem);
             }
         }

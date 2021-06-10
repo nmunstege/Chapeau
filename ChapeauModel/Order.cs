@@ -13,6 +13,8 @@ namespace ChapeauModel
         public int UserId { get; set; }
         public int BillId { get; set; }
         public int TableId { get; set; }
+        public List<OrderItem> OrderItems { get; set; }
+        
 
         public Order()
         {

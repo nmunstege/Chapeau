@@ -18,8 +18,8 @@ namespace ChapeauUI
         CategoryService categoryService;
         SubCategoryService subCategoryService;
         public OrderItemService orderItemService;
+        List<FlowLayoutPanel> itemWrappers = new List<FlowLayoutPanel>();
         public Item SelectedItem { get; set; }
-
         public List<OrderItem> TempOrderItems { get; set; }
         public Order CurrentOrder { get; set; }
         public OrderingUI(Order order)
@@ -29,6 +29,7 @@ namespace ChapeauUI
             subCategoryService = new SubCategoryService();
             CurrentOrder = order;
             TempOrderItems = new List<OrderItem>();
+            
 
             InitializeComponent();
             DrawMenuTabControl();
@@ -75,8 +76,11 @@ namespace ChapeauUI
                         Height = 40,
                         Location = new Point(0, 0),
                         Margin = new Padding(0),
-                        Tag = subCategory
+                        Tag = subCategory,
+                        
                     };
+                    subCategoryButton.Click += new EventHandler(subCategoryButton_Click);
+
                     subCategoryWrapper.Controls.Add(subCategoryButton);
                     //
                     // Nazirou
@@ -85,23 +89,41 @@ namespace ChapeauUI
                     {
                         FlowDirection = FlowDirection.TopDown,
                         WrapContents = false,
-                        AutoSize = true
+                        AutoSize = true,
+                        Tag = subCategory
                     };
+                    itemsWrapper.Hide();
+                    itemWrappers.Add(itemsWrapper);
 
                     foreach (Item item in itemService.GetItemsBySubCategory(subCategory))
                     {
                         ItemRow itemRow = new ItemRow(item, CurrentOrder);
                         itemsWrapper.Controls.Add(itemRow);
+                        
 
                     }
 
                     subCategoryWrapper.Controls.Add(itemsWrapper);
 
-                    //CategoryWrapper categoryWrapper = new CategoryWrapper(subCategory);
+                    
                     categoryFlowLayouPanel.Controls.Add(subCategoryWrapper);
                 }
                 categoryTabPage.Controls.Add(categoryFlowLayouPanel);
                 tabControlMenu.TabPages.Add(categoryTabPage);
+            }
+        }
+
+        private void subCategoryButton_Click(object sender, EventArgs e)
+        {
+            foreach(FlowLayoutPanel itemWrapper in itemWrappers)
+            {
+                if((SubCategory)itemWrapper.Tag == (sender as Button).Tag)
+                {
+                    itemWrapper.Show();
+                }else
+                {
+                    itemWrapper.Hide();
+                }
             }
         }
 

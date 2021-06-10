@@ -31,6 +31,18 @@ namespace ChapeauDAL
             return items;
         }
 
+        public Item GetItemById(int id)
+        {
+            string query = "SELECT Item_no, Name, Description, Price, Quantity" +
+                     "FROM [Items] " +
+                     "WHERE Item_no = @itemId";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("itemId", id)
+            };
+            return ReadTable(ExecuteSelectQuery(query, sqlParameters))[0];
+        }
+
         public List<Item> GetItemBySubcategory(ChapeauModel.SubCategory subCategory)
         {
             string query = "SELECT Item_no, [Items].Name, Description, Price, Quantity, [Items].SubCategory_no, [SubCategories].VAT " +

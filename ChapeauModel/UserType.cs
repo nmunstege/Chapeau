@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChapeauModel
-{
-    enum UserType
-    {
-        Waiter = 1,
-        Chef,
-        Bartender
-    }
-}
+//namespace ChapeauModel
+//{
+//   public enum UserType
+//    {
+//        Waiter = 1,
+//        Chef,
+//        Bartender
+//    }
+//}
