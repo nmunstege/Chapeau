@@ -19,9 +19,9 @@ namespace ChapeauLogic
         }
 
 
-        public double CalculateVat(OrderItem orderItem, Item item)
+        public double CalculateVat(OrderItem orderItem)
         {
-            return  item.VATCalc(item) * orderItem.Count;
+            return orderItem.Item.VATCalc(orderItem.Item) * orderItem.Count;
         }
 
         public double LowVATCategory(Item item)
@@ -51,17 +51,14 @@ namespace ChapeauLogic
             double amountPayable = 0;
             foreach (OrderItem orderItem in order.OrderItems)
             {
-                foreach (Item item in orderItem.Items)
+                if (orderItem.Item.Id == orderItem.ItemId)
                 {
-                    if (item.Id == orderItem.ItemId)
-                    {
-                        amountPayable += order.OrderItems.Count * item.Price;
-                        break;
-                    }
-                    
+                    amountPayable += order.OrderItems.Count * orderItem.Item.Price;
+                    break;
                 }
             }
             return amountPayable += totalVAT;
         }
+
     }
 }
