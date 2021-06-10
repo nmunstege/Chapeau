@@ -37,7 +37,7 @@ namespace ChapeauLogic
             {
                Item individualItem = itemDao.GetItemsInOrder(item.ItemId);
                 ordeItems.Add(individualItem);
-                
+                item.Items = ordeItems;
             }
         }
     }

@@ -15,7 +15,7 @@ namespace ChapeauModel
         public int Count { get; set; }
         public string Comment { get; set; }
         public DateTime TimeStamp { get; set; }
-        public Item Item { get; set; }
+        
        
      
 
