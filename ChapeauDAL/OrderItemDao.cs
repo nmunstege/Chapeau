@@ -28,7 +28,7 @@ namespace ChapeauDAL
                     Count = (int)dr["Count"],
                     Comment = (string)dr["Comment"],
                     TimeStamp = (DateTime)dr["Timestamp"],
-                    item =itemDao.GetItemsInOrder((int)dr["Item_no"])
+                    Item =itemDao.GetItemsInOrder((int)dr["Item_no"])
                    
                 };
 

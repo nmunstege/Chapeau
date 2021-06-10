@@ -59,9 +59,7 @@ namespace ChapeauUI
             this.btnCalClose = new System.Windows.Forms.Button();
             this.btnCalClear = new System.Windows.Forms.Button();
             this.btnCalDel = new System.Windows.Forms.Button();
-            this.lblUserId = new System.Windows.Forms.Label();
             this.btnProceedToCheckout = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.lblTotalBeforeTip = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -92,9 +90,7 @@ namespace ChapeauUI
             this.pnlPaymentHomeScreen.Controls.Add(this.pnlPaymentOptions);
             this.pnlPaymentHomeScreen.Controls.Add(this.lblOrderId);
             this.pnlPaymentHomeScreen.Controls.Add(this.pnlCalculator);
-            this.pnlPaymentHomeScreen.Controls.Add(this.lblUserId);
             this.pnlPaymentHomeScreen.Controls.Add(this.btnProceedToCheckout);
-            this.pnlPaymentHomeScreen.Controls.Add(this.label3);
             this.pnlPaymentHomeScreen.Controls.Add(this.lblTotalBeforeTip);
             this.pnlPaymentHomeScreen.Controls.Add(this.label2);
             this.pnlPaymentHomeScreen.Controls.Add(this.label9);
@@ -483,17 +479,6 @@ namespace ChapeauUI
             this.btnCalDel.UseVisualStyleBackColor = true;
             this.btnCalDel.Click += new System.EventHandler(this.btnCalDel_Click);
             // 
-            // lblUserId
-            // 
-            this.lblUserId.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblUserId.Location = new System.Drawing.Point(362, 21);
-            this.lblUserId.Margin = new System.Windows.Forms.Padding(0);
-            this.lblUserId.Name = "lblUserId";
-            this.lblUserId.Size = new System.Drawing.Size(29, 23);
-            this.lblUserId.TabIndex = 8;
-            this.lblUserId.Text = "..";
-            this.lblUserId.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // btnProceedToCheckout
             // 
             this.btnProceedToCheckout.Location = new System.Drawing.Point(254, 743);
@@ -504,22 +489,11 @@ namespace ChapeauUI
             this.btnProceedToCheckout.UseVisualStyleBackColor = true;
             this.btnProceedToCheckout.Click += new System.EventHandler(this.btnProceedToCheckout_Click);
             // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(309, 16);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 32);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "user:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // lblTotalBeforeTip
             // 
             this.lblTotalBeforeTip.AutoSize = true;
             this.lblTotalBeforeTip.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTotalBeforeTip.Location = new System.Drawing.Point(349, 589);
+            this.lblTotalBeforeTip.Location = new System.Drawing.Point(310, 589);
             this.lblTotalBeforeTip.Name = "lblTotalBeforeTip";
             this.lblTotalBeforeTip.Size = new System.Drawing.Size(32, 28);
             this.lblTotalBeforeTip.TabIndex = 23;
@@ -540,7 +514,7 @@ namespace ChapeauUI
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(188, 589);
+            this.label9.Location = new System.Drawing.Point(150, 589);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(155, 28);
             this.label9.TabIndex = 22;
@@ -561,7 +535,7 @@ namespace ChapeauUI
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(188, 637);
+            this.label8.Location = new System.Drawing.Point(187, 637);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(81, 28);
             this.label8.TabIndex = 21;
@@ -582,7 +556,7 @@ namespace ChapeauUI
             // 
             this.txtTip.BackColor = System.Drawing.SystemColors.MenuBar;
             this.txtTip.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTip.Location = new System.Drawing.Point(309, 637);
+            this.txtTip.Location = new System.Drawing.Point(308, 637);
             this.txtTip.Name = "txtTip";
             this.txtTip.Size = new System.Drawing.Size(68, 34);
             this.txtTip.TabIndex = 20;
@@ -593,7 +567,7 @@ namespace ChapeauUI
             // 
             this.txtTotalPrice.BackColor = System.Drawing.SystemColors.MenuBar;
             this.txtTotalPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtTotalPrice.Location = new System.Drawing.Point(309, 688);
+            this.txtTotalPrice.Location = new System.Drawing.Point(308, 688);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.Size = new System.Drawing.Size(68, 34);
             this.txtTotalPrice.TabIndex = 19;
@@ -604,7 +578,7 @@ namespace ChapeauUI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(188, 687);
+            this.label4.Location = new System.Drawing.Point(187, 687);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 28);
             this.label4.TabIndex = 18;
@@ -614,7 +588,7 @@ namespace ChapeauUI
             // 
             this.lblLowVat.AutoSize = true;
             this.lblLowVat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblLowVat.Location = new System.Drawing.Point(349, 537);
+            this.lblLowVat.Location = new System.Drawing.Point(313, 537);
             this.lblLowVat.Name = "lblLowVat";
             this.lblLowVat.Size = new System.Drawing.Size(28, 28);
             this.lblLowVat.TabIndex = 17;
@@ -624,7 +598,7 @@ namespace ChapeauUI
             // 
             this.lblHighVat.AutoSize = true;
             this.lblHighVat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblHighVat.Location = new System.Drawing.Point(349, 493);
+            this.lblHighVat.Location = new System.Drawing.Point(314, 493);
             this.lblHighVat.Name = "lblHighVat";
             this.lblHighVat.Size = new System.Drawing.Size(24, 28);
             this.lblHighVat.TabIndex = 16;
@@ -634,7 +608,7 @@ namespace ChapeauUI
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(188, 537);
+            this.label5.Location = new System.Drawing.Point(166, 537);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(139, 28);
             this.label5.TabIndex = 15;
@@ -644,7 +618,7 @@ namespace ChapeauUI
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(188, 493);
+            this.label6.Location = new System.Drawing.Point(152, 493);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(157, 28);
             this.label6.TabIndex = 14;
@@ -737,10 +711,8 @@ namespace ChapeauUI
         private System.Windows.Forms.Label lblTableNumber;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblOrderId;
-        private System.Windows.Forms.Label lblUserId;
         private System.Windows.Forms.Button btnProceedToCheckout;
         private System.Windows.Forms.Label lblTotalBeforeTip;
         private System.Windows.Forms.Label label9;

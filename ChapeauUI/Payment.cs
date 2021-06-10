@@ -31,24 +31,23 @@ namespace ChapeauUI
             pnlPaymentHomeScreen.Show();
             
             pnlPaymentOptions.Hide();
-            lblUserId.Text = order.UserId.ToString();
             lblTableNumber.Text = order.TableId.ToString();
             lblOrderId.Text = order.Id.ToString();
 
             OrderItemService orderItemService = new OrderItemService();
-            ItemService itemService = new ItemService();
+
+           // ItemService itemService = new ItemService();
             //fill list in order with orderitems 
             orderItemService.FillOrderWithOrderItems(order);
             //fill list in orderitems with items
-            itemService.FillOrderItemItems(order.OrderItems);
+            //itemService.FillOrderItemItems(order.OrderItems);
 
             //Show order items
-            foreach (OrderItem orderItem in order.OrderItems)
-            {
-                ShowOrderItems(orderItem);
-            }
+            
+                ShowOrderItems(order.OrderItems);
+            
             //show vat
-            double totalVAT= TotalVAT(order);
+            double totalVAT= TotalVAT(order.OrderItems);
            double amountPayable= orderService.CalculateAmountPayable(totalVAT,order);
             lblTotalBeforeTip.Text = amountPayable.ToString("0.00");
             txtTotalPrice.Text = amountPayable.ToString("0.00");
@@ -61,39 +60,32 @@ namespace ChapeauUI
             lvOrderItems.Items.Clear();
             foreach (OrderItem orderItem in orderItems)
             {
-                ListViewItem orderitem = new ListViewItem(orderItem.item.Name);
+                ListViewItem orderitem = new ListViewItem(orderItem.Item.Name);
                 orderitem.SubItems.Add(orderItem.Count.ToString());
-                orderitem.SubItems.Add(orderItem.item.Price.ToString("€0.00"));
-                double Total = orderItem.Price * orderItem.Count;
+                orderitem.SubItems.Add(orderItem.Item.Price.ToString("€0.00"));
+                double Total = orderItem.Item.Price * orderItem.Count;
                 orderitem.SubItems.Add(Total.ToString("€0.00"));
                 orderitem.Tag = orderitem;
                 lvOrderItems.Items.Add(orderitem);
             }
         }
 
-        double TotalVAT(Order order)
+        double TotalVAT(List<OrderItem>orderItems)
         {
             double vatHigh = 0;
             double vatLow = 0;
              
-            foreach (OrderItem orderitem in order.OrderItems)
+            foreach (OrderItem orderitem in orderItems)
             {
-                foreach (Item item in orderitem.Items)
+                double vatCalc = orderService.CalculateVat(orderitem);
+                double lowVatCategory = orderService.LowVATCategory(orderitem.Item);
+                if (orderitem.Item.VAT == lowVatCategory)
                 {
-                    if (item.Id == orderitem.ItemId)
-                    {
-                        double vatCalc = orderService.CalculateVat(orderitem, item);
-                        double lowVatCategory = orderService.LowVATCategory(item);
-                        if (item.VAT == lowVatCategory)
-                        {
-                            vatLow += vatCalc;
-                        }
-                        else
-                        {
-                            vatHigh += vatCalc;
-                        }
-                        break;
-                    }
+                    vatLow += vatCalc;
+                }
+                else
+                {
+                    vatHigh += vatCalc;
                 }
             }
             lblHighVat.Text = vatHigh.ToString("0.00");

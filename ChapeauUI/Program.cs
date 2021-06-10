@@ -18,7 +18,7 @@ namespace ChapeauUI
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Order order = new Order();
+           // Order order = new Order();
             //Application.Run(new OrderingUI(new Order(1, 1, 0, 1)));
             Application.Run(new Payment(new Order(1, 1, 0, 1)));
 

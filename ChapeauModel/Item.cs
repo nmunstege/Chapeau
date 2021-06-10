@@ -33,9 +33,9 @@ namespace ChapeauModel
             SubCategory = subCategory;
             VAT = vat;
         }
-        public double VATCalc(Item item)
+        public double VATCalc(OrderItem orderItem)
         {
-            return (item.VAT / 100) * price;
+            return (orderItem.Item.VAT / 100) * price;
         }
     }
 }
