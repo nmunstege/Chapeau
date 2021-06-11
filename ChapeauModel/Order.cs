@@ -23,14 +23,14 @@ namespace ChapeauModel
             
         }
 
-        public Order(int id, int userId, int billId, int tableId, Table table)
+        public Order(int id, int userId, int billId, int tableId,Table table)
         {
            
             this.id = id;
             UserId = userId;
             BillId = billId;
             TableId = tableId;
-            Table = table;
+            this.Table = table;
             
         }
 

@@ -9,14 +9,14 @@ namespace ChapeauModel
     public class Table
     {
         public int TableId { get; set; }
-        public bool Status { get; set; }
+        public int Status { get; set; }
 
         public Table()
         {
         
         }
 
-        public Table(int tableId,bool status)
+        public Table(int tableId,int status)
         {
             this.TableId = tableId;
             this.Status = status;

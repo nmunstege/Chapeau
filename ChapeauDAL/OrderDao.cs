@@ -16,9 +16,11 @@ namespace ChapeauDAL
     public class OrderDao : BaseDao
     {
         OrderItemDao orderItemDao;
+        TableDao tableDao;
         public OrderDao()
         {
-             orderItemDao = new OrderItemDao(); 
+             orderItemDao = new OrderItemDao();
+            tableDao = new TableDao();
         }
         private List<Order> ReadTable(DataTable dataTable)
         {
@@ -26,19 +28,22 @@ namespace ChapeauDAL
             foreach(DataRow dr in dataTable.Rows)
             {
                 int id = (int)dr["Order_no"];
-                int tableId = (int)dr["Table_no"];
                 int userId = (int)dr["User_no"];
-                int billId = (int)dr["Bill_no"];
-                Order order = new Order(id, userId, tableId, billId);
+                //int billId = (int)dr["Bill_no"];
+                int billId = 0;
+                int tableId = (int)dr["Table_no"];
+                Table table = tableDao.GetTableById((int)dr["Table_no"]);
+                Order order = new Order(id, userId, tableId, billId,table);
                 order.OrderItems = orderItemDao.GetOrderItemsByOrder(order);
                 orders.Add(order);
+                
             }
             return orders;
         }
 
         public Order GetOrderByOrderId(int orderId)
         {
-            string query = "SELECT User_no, Table_no " +
+            string query = "SELECT Order_no, User_no, Table_no, Bill_no " +
                                "FROM Orders " +
                                "WHERE Order_no = @orderId";
             SqlParameter[] sqlParameters =

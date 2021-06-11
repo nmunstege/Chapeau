@@ -18,7 +18,7 @@ namespace ChapeauLogic
 
         public void FreeTable(Table table)
         {
-            tableDao.FreeTable(table);
+           // tableDao.FreeTable(table);
         }
     }
 }

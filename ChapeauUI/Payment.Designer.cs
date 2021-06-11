@@ -805,7 +805,6 @@ namespace ChapeauUI
             // 
             // pnlPay
             // 
-            this.pnlPay.Controls.Add(this.pnlEndPayment);
             this.pnlPay.Controls.Add(this.pnlCardPayment);
             this.pnlPay.Controls.Add(this.lblCashOrderNr);
             this.pnlPay.Controls.Add(this.label14);
@@ -1309,10 +1308,10 @@ namespace ChapeauUI
             this.pnlEndPayment.Controls.Add(this.label23);
             this.pnlEndPayment.Controls.Add(this.lblTableIdEnd);
             this.pnlEndPayment.Controls.Add(this.label31);
-            this.pnlEndPayment.Location = new System.Drawing.Point(0, 0);
+            this.pnlEndPayment.Location = new System.Drawing.Point(8, 8);
             this.pnlEndPayment.Name = "pnlEndPayment";
             this.pnlEndPayment.Size = new System.Drawing.Size(392, 807);
-            this.pnlEndPayment.TabIndex = 53;
+            this.pnlEndPayment.TabIndex = 54;
             // 
             // lblFreeTableEnd
             // 
@@ -1482,6 +1481,7 @@ namespace ChapeauUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(393, 806);
+            this.Controls.Add(this.pnlEndPayment);
             this.Controls.Add(this.pnlPay);
             this.Controls.Add(this.pnlPaymentOptions);
             this.Controls.Add(this.pnlPaymentHomeScreen);
@@ -1602,6 +1602,10 @@ namespace ChapeauUI
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnCardPayment;
         private System.Windows.Forms.Panel pnlEndPayment;
+        private System.Windows.Forms.Label lblFreeTableEnd;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label lbltableIdEnd2;
+        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtFeedback;
         private System.Windows.Forms.Label label20;
@@ -1614,9 +1618,5 @@ namespace ChapeauUI
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label lblTableIdEnd;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label lblFreeTableEnd;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label lbltableIdEnd2;
-        private System.Windows.Forms.Label label19;
     }
 }

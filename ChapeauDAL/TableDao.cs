@@ -19,7 +19,7 @@ namespace ChapeauDAL
                 Table table = new Table()
                 {
                     TableId = (int)dr["Table_no"],
-                    Status = (bool)dr["Status"]
+                    Status = (int)dr["Status"]
                 };
                 tables.Add(table);
             }
@@ -27,9 +27,9 @@ namespace ChapeauDAL
         }
         public Table GetTableById(int tableId)
         {
-            string query = "SELECT [Table_no], Status" +
-                               "FROM Tables" +
-                               "WHERE [Table_no] = @TableNo";
+            string query = "SELECT Table_no, Status " +
+                               "FROM Tables " +
+                               "WHERE Table_no = @TableNo";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@TableNo", tableId)

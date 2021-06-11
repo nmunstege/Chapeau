@@ -44,11 +44,10 @@ namespace ChapeauUI
 
             OrderItemService orderItemService = new OrderItemService();
            
-           // ItemService itemService = new ItemService();
+           
             //fill list in order with orderitems 
             orderItemService.FillOrderWithOrderItems(bill.Order);
-            //fill list in orderitems with items
-            //itemService.FillOrderItemItems(order.OrderItems);
+            
             
                //Show order items
 
@@ -248,7 +247,7 @@ namespace ChapeauUI
 
             pnlPaymentOptions.Show();
             lblPayOpOrderNr.Text = bill.OrderId.ToString();
-            lblPayOpTableNr.Text = bill.Order.TableId.ToString();
+            lblPayOpTableNr.Text = bill.Order.Table.TableId.ToString();
         }
 
         //payment options buttons
@@ -385,7 +384,7 @@ namespace ChapeauUI
 
              lblCashTableId.Text = bill.Order.TableId.ToString();
             lblCashTotalPrice.Text = bill.TotalPrice.ToString();
-
+            bill.paymentMethod = paymentMethod;
 
             // LoadFinishPayment();
         }
@@ -423,7 +422,7 @@ namespace ChapeauUI
             lblOrdernrEnd2.Text = lblOrderNrEnd.Text;
             
             // Freeing table in Database
-            bill.Order.Table.Status = false;
+            bill.Order.Table.Status = 0;
             ShowOrderResult();
             BillService billService = new BillService();
             billService.UpdateBill(bill);
@@ -441,7 +440,7 @@ namespace ChapeauUI
                 lblEndPaymentResult.Text = "Unsuccessful";
             }
 
-            if (bill.Order.Table.Status == false)
+            if (bill.Order.Table.Status == 0)
             {
                 lblFreeTableEnd.Text = "Unoccupied";
             }

@@ -55,7 +55,7 @@ namespace ChapeauDAL
         public void UpdateBill(Bill bill)
         {
             string query = "UPDATE Bills SET Order_no = @Order_no, Feedback = @Feedback,Tip = @Tip, Total_Price = @Total_Price, " +
-                           "Payment_Method = @Payment_Method, Is_Payed = @Is_Payed" +
+                           "Payment_Method = @Payment_Method, Is_Payed = @Is_Payed " +
                            "WHERE Bill_no = @Bill_no";
 
             SqlParameter[] sqlParameters =
@@ -71,21 +71,6 @@ namespace ChapeauDAL
             ExecuteEditQuery(query, sqlParameters);
 
         }
-
-        //public void FreeTable(Table table)
-        //{
-        //    string query = "UPDATE Tables SET Status = @Status" +
-        //                   "WHERE Table_no = @Table_no";
-
-        //    SqlParameter[] sqlParameters =
-        //    {
-        //        new SqlParameter("@Table_no", table.Id),
-        //        new SqlParameter("@Status", table.Status),
-
-        //    };
-        //    ReadTable(ExecuteSelectQuery(query, sqlParameters));
-
-        //}
     }
 }
 
