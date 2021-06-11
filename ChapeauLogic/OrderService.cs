@@ -60,5 +60,10 @@ namespace ChapeauLogic
             return amountPayable += totalVAT;
         }
 
+        public Order GetOrder(int orderId)
+        {
+            return orderDao.GetOrderByOrderId(orderId);
+        }
+
     }
 }

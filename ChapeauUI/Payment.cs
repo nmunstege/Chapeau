@@ -15,44 +15,53 @@ namespace ChapeauUI
     public partial class Payment : Form
     {
         OrderService orderService;
-        BillService billService;
-        public Payment(Order order)
+        Bill bill;
+        public Payment(int orderNr)
         {
             
             InitializeComponent();
-            LoadPaymentHomeScreen(order);
+            LoadPaymentHomeScreen(orderNr);
             
         }
 
-        void LoadPaymentHomeScreen(Order order)
+        void LoadPaymentHomeScreen(int orderNr)
         {
             orderService = new OrderService();
             //show labels on the homescreen
-            pnlPaymentHomeScreen.Show();
             
+            pnlPay.Hide();
+            pnlCashPayment.Hide();
             pnlPaymentOptions.Hide();
-            lblTableNumber.Text = order.TableId.ToString();
-            lblOrderId.Text = order.Id.ToString();
+            pnlCardPayment.Hide();
+            pnlEndPayment.Hide();
+
+            pnlPaymentHomeScreen.Show();
+
+            bill = new Bill();
+            bill.Order = orderService.GetOrder(1);
+            lblTableNumber.Text = bill.Order.TableId.ToString();
+            lblOrderId.Text = bill.Order.Id.ToString();
 
             OrderItemService orderItemService = new OrderItemService();
-
+           
            // ItemService itemService = new ItemService();
             //fill list in order with orderitems 
-            orderItemService.FillOrderWithOrderItems(order);
+            orderItemService.FillOrderWithOrderItems(bill.Order);
             //fill list in orderitems with items
             //itemService.FillOrderItemItems(order.OrderItems);
+            
+               //Show order items
 
-            //Show order items
+               ShowOrderItems(bill.Order.OrderItems);
             
-                ShowOrderItems(order.OrderItems);
-            
-            //show vat
-            double totalVAT= TotalVAT(order.OrderItems);
-           double amountPayable= orderService.CalculateAmountPayable(totalVAT,order);
+            //show vat and total info
+            double totalVAT= TotalVAT(bill.Order.OrderItems);
+           double amountPayable= orderService.CalculateAmountPayable(totalVAT, bill.Order);
             lblTotalBeforeTip.Text = amountPayable.ToString("0.00");
             txtTotalPrice.Text = amountPayable.ToString("0.00");
             double tip = CalculateTip();
             pnlCalculator.Hide();
+           
         }
 
         void ShowOrderItems(List<OrderItem>orderItems)
@@ -146,9 +155,9 @@ namespace ChapeauUI
         private void btnEnterTotalPrice_Click(object sender, EventArgs e)
         {
             txtTotalPrice.Text = txtResult.Text;
-            if (double.Parse(lblTotalBeforeTip.Text.ToString())< double.Parse(txtTotalPrice.Text.ToString()) )
+            if (double.Parse(lblTotalBeforeTip.Text)< double.Parse(txtTotalPrice.Text) )
             {
-                double tip = double.Parse(txtTotalPrice.Text.ToString()) - double.Parse(lblTotalBeforeTip.Text.ToString());
+                double tip = double.Parse(txtTotalPrice.Text) - double.Parse(lblTotalBeforeTip.Text);
                 txtTip.Text = tip.ToString("0.00");
             }
             CheckTotalPrice();
@@ -157,7 +166,7 @@ namespace ChapeauUI
         //proceed to checkout button must be disabled if total price less than order
         void CheckTotalPrice()
         {
-            if (double.Parse(lblTotalBeforeTip.Text.ToString()) > double.Parse(txtTotalPrice.Text.ToString()))
+            if (double.Parse(lblTotalBeforeTip.Text) > double.Parse(txtTotalPrice.Text))
             {
                 btnProceedToCheckout.Enabled = false;
             }
@@ -187,51 +196,260 @@ namespace ChapeauUI
             CheckTotalPrice();
         }
 
-        // back button
+        // back button to payment home
         private void btnBackToPaymentHome_Click(object sender, EventArgs e)
         {
             pnlPaymentHomeScreen.Show();
             pnlPaymentOptions.Hide();
             pnlCalculator.Hide();
+            pnlCardPayment.Hide();
+            pnlCashPayment.Hide();
+            pnlPay.Hide();
+            pnlEndPayment.Hide();
         }
         
         private void btnProceedToCheckout_Click(object sender, EventArgs e)
         {
+
+            BillService billService = new BillService();
+           
+            bill.OrderId = int.Parse(lblOrderId.Text);
+            bill.TotalPrice = double.Parse(txtTotalPrice.Text);
+            if (txtTip.Text != "")
+            {
+                bill.Tip = double.Parse(txtTip.Text);
+            }
+            else
+            {
+                bill.Tip = 0;
+            }
+
+            if (bill.Feedback == null)
+            {
+                bill.Feedback = " ";
+            }
+            bill.IsPaid = false;
+            billService.AddBill(bill);
+            
+            
+
+            LoadPaymentOptions();
+        }
+
+        void LoadPaymentOptions()
+        {
+            
+            pnlCashPayment.Hide();
+            pnlPay.Hide();
+            pnlPaymentHomeScreen.Hide();
+            pnlCalculator.Hide();
+            pnlCardPayment.Hide();
+            pnlEndPayment.Hide();
+
             pnlPaymentOptions.Show();
-            billService = new BillService();
+            lblPayOpOrderNr.Text = bill.OrderId.ToString();
+            lblPayOpTableNr.Text = bill.Order.TableId.ToString();
         }
 
         //payment options buttons
 
         private void btnCash_Click(object sender, EventArgs e)
         {
-            
-            new PaymentOptions(billService, PaymentMethods.cash);
+            LoadCashPayment();
         }
 
         private void btnpin_Click(object sender, EventArgs e)
         {
-            new PaymentOptions(billService, PaymentMethods.pin);
+            LoadCardPayment(PaymentMethods.pin);
         }
 
         private void btnDebit_Click(object sender, EventArgs e)
         {
-            new PaymentOptions(billService, PaymentMethods.debitCard);
+            LoadCardPayment(PaymentMethods.debitCard);
         }
 
         private void btnCredit_Click(object sender, EventArgs e)
         {
-            new PaymentOptions(billService, PaymentMethods.credit);
+            LoadCardPayment(PaymentMethods.credit);
         }
 
         private void btnMasterCard_Click(object sender, EventArgs e)
         {
-            new PaymentOptions(billService, PaymentMethods.masterCard);
+            LoadCardPayment(PaymentMethods.masterCard);
         }
 
         private void btnAmericanExpress_Click(object sender, EventArgs e)
         {
-            new PaymentOptions(billService, PaymentMethods.americanExpress);
+            LoadCardPayment(PaymentMethods.americanExpress);
+        }
+
+        private void btnVisa_Click(object sender, EventArgs e)
+        {
+            LoadCardPayment(PaymentMethods.visa);
+        }
+        void LoadCashPayment()
+        {
+            
+            pnlPaymentHomeScreen.Hide();
+            pnlCalculator.Hide();
+            pnlPaymentOptions.Hide();
+            pnlCardPayment.Hide();
+            pnlEndPayment.Hide();
+
+            pnlPay.Show();
+            pnlCashPayment.Show();
+
+            lblCashOrderNr.Text = bill.OrderId.ToString();
+           lblCashTableId.Text = bill.Order.TableId.ToString();
+            lblCashTotalPrice.Text = bill.TotalPrice.ToString();
+            lblPayTitle.Text = "Cash Payment";
+            btnPay.Show();
+        }
+
+        private void btnCashCal_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            txtCashEnter.Text = txtCashEnter.Text + button.Text;
+
+            CheckEnteredCashPayment();
+            CheckChangeAmount();
+        }
+
+        void CheckEnteredCashPayment()
+        {
+            if (txtCashEnter.Text != "")
+            {
+                if (double.Parse(txtCashEnter.Text) >= double.Parse(lblCashTotalPrice.Text))
+                {
+                    btnPay.Enabled = true;
+                }
+                else
+                {
+                    btnPay.Enabled = false;
+                }
+            }
+            else
+            {
+                return;
+            }
+            
+        }
+
+        void CheckChangeAmount()
+        {
+            if (txtCashEnter.Text != "")
+            {
+                lblChange.Text = (bill.TotalPrice - double.Parse(txtCashEnter.Text)).ToString("€0.00");
+            }
+            else
+            {
+                lblChange.Text = "0";
+            }
+        }
+        private void btnCashClear_Click(object sender, EventArgs e)
+        {
+            txtCashEnter.Clear();
+            CheckEnteredCashPayment();
+            CheckChangeAmount();
+        }
+
+        private void btnCashDel_Click(object sender, EventArgs e)
+        {
+            if (txtCashEnter.Text.Length > 0)
+            {
+                txtCashEnter.Text = txtCashEnter.Text.Remove(txtCashEnter.Text.Length - 1, 1);
+            }
+            CheckEnteredCashPayment();
+            CheckChangeAmount();
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            bill.IsPaid = true;
+            LoadFinishPayment();
+        }
+
+        void LoadCardPayment(PaymentMethods paymentMethod)
+        {
+            pnlCashPayment.Hide();
+            pnlPaymentOptions.Hide();
+            pnlPaymentHomeScreen.Hide();
+            pnlCalculator.Hide();
+            pnlEndPayment.Hide();
+
+            pnlPay.Show();
+            pnlCardPayment.Show();
+            
+            lblPayTitle.Text = "Card Payment";
+            btnPay.Hide();
+
+             lblCashTableId.Text = bill.Order.TableId.ToString();
+            lblCashTotalPrice.Text = bill.TotalPrice.ToString();
+
+
+            // LoadFinishPayment();
+        }
+        private void btnCardPayment_Click(object sender, EventArgs e)
+        {
+            bill.IsPaid = true;
+            LoadFinishPayment();
+        }
+
+        private void btnBackToPaymentOptions_Click(object sender, EventArgs e)
+        {
+            pnlCashPayment.Hide();
+            pnlPaymentHomeScreen.Hide();
+            pnlCalculator.Hide();
+            pnlPay.Hide();
+            pnlCardPayment.Hide();
+            pnlEndPayment.Hide();
+
+            pnlPaymentOptions.Show();
+        }
+
+        void LoadFinishPayment()
+        {
+            pnlCashPayment.Hide();
+            pnlPaymentHomeScreen.Hide();
+            pnlCalculator.Hide();
+            pnlPay.Hide();
+            pnlCardPayment.Hide();
+            pnlPaymentOptions.Hide();
+
+            pnlEndPayment.Show();
+             lblTableIdEnd.Text = bill.Order.TableId.ToString();
+            lbltableIdEnd2.Text = lblTableIdEnd.Text;
+            lblOrderNrEnd.Text = bill.OrderId.ToString();
+            lblOrdernrEnd2.Text = lblOrderNrEnd.Text;
+            
+            // Freeing table in Database
+            bill.Order.Table.Status = false;
+            ShowOrderResult();
+            BillService billService = new BillService();
+            billService.UpdateBill(bill);
+        }
+        
+
+        void ShowOrderResult()
+        {
+            if (bill.IsPaid == true)
+            {
+                lblEndPaymentResult.Text = "Successful";
+            }
+            else
+            {
+                lblEndPaymentResult.Text = "Unsuccessful";
+            }
+
+            if (bill.Order.Table.Status == false)
+            {
+                lblFreeTableEnd.Text = "Unoccupied";
+            }
+            else
+            {
+                lblFreeTableEnd.Text = "Still Occupied, freeing table unsuccessful";
+            }
+
         }
     }
 }

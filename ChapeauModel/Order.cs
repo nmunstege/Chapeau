@@ -10,11 +10,12 @@ namespace ChapeauModel
     public class Order
     {
         int id;
-        public int Id { get { return id; } }
+        public int Id { get { return id; } set{ id = value; } }
         public int UserId { get; set; }
         public int BillId { get; set; }
         public int TableId { get; set; }
         public List<OrderItem> OrderItems { get; set; }
+        public Table Table { get; set; }
         
 
         public Order()
@@ -22,13 +23,14 @@ namespace ChapeauModel
             
         }
 
-        public Order(int id, int userId, int billId, int tableId)
+        public Order(int id, int userId, int billId, int tableId, Table table)
         {
            
             this.id = id;
             UserId = userId;
             BillId = billId;
             TableId = tableId;
+            Table = table;
             
         }
 

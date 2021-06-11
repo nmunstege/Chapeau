@@ -30,15 +30,6 @@ namespace ChapeauUI
         private void InitializeComponent()
         {
             this.pnlPaymentHomeScreen = new System.Windows.Forms.Panel();
-            this.pnlPaymentOptions = new System.Windows.Forms.Panel();
-            this.btnCredit = new System.Windows.Forms.Button();
-            this.btnVisa = new System.Windows.Forms.Button();
-            this.btnDebit = new System.Windows.Forms.Button();
-            this.btnpin = new System.Windows.Forms.Button();
-            this.btnMasterCard = new System.Windows.Forms.Button();
-            this.btnAmericanExpress = new System.Windows.Forms.Button();
-            this.btnCash = new System.Windows.Forms.Button();
-            this.btnBackToPaymentHome = new System.Windows.Forms.Button();
             this.lblOrderId = new System.Windows.Forms.Label();
             this.pnlCalculator = new System.Windows.Forms.Panel();
             this.btnEnterTotalPrice = new System.Windows.Forms.Button();
@@ -80,14 +71,87 @@ namespace ChapeauUI
             this.Price = new System.Windows.Forms.ColumnHeader();
             this.Total = new System.Windows.Forms.ColumnHeader();
             this.label7 = new System.Windows.Forms.Label();
+            this.pnlPaymentOptions = new System.Windows.Forms.Panel();
+            this.lblPayOpOrderNr = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lblPayOpTableNr = new System.Windows.Forms.Label();
+            this.btnCredit = new System.Windows.Forms.Button();
+            this.btnVisa = new System.Windows.Forms.Button();
+            this.btnDebit = new System.Windows.Forms.Button();
+            this.btnpin = new System.Windows.Forms.Button();
+            this.btnMasterCard = new System.Windows.Forms.Button();
+            this.btnAmericanExpress = new System.Windows.Forms.Button();
+            this.btnCash = new System.Windows.Forms.Button();
+            this.btnBackToPaymentHome = new System.Windows.Forms.Button();
+            this.pnlPay = new System.Windows.Forms.Panel();
+            this.pnlCardPayment = new System.Windows.Forms.Panel();
+            this.lblCardTotal = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnCardPayment = new System.Windows.Forms.Button();
+            this.lblCashOrderNr = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btnBackToPaymentOptions = new System.Windows.Forms.Button();
+            this.lblPayTitle = new System.Windows.Forms.Label();
+            this.lblCashTableId = new System.Windows.Forms.Label();
+            this.btnPay = new System.Windows.Forms.Button();
+            this.pnlCashPayment = new System.Windows.Forms.Panel();
+            this.txtCashEnter = new System.Windows.Forms.TextBox();
+            this.lblChange = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblCashTotalPrice = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
+            this.btnCashDel = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.btnCashClear = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnCashCal = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.pnlEndPayment = new System.Windows.Forms.Panel();
+            this.lblFreeTableEnd = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.lbltableIdEnd2 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtFeedback = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.lblEndPaymentResult = new System.Windows.Forms.Label();
+            this.lblOrdernrEnd2 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.lblOrderNrEnd = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.lblTableIdEnd = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.pnlPaymentHomeScreen.SuspendLayout();
-            this.pnlPaymentOptions.SuspendLayout();
             this.pnlCalculator.SuspendLayout();
+            this.pnlPaymentOptions.SuspendLayout();
+            this.pnlPay.SuspendLayout();
+            this.pnlCardPayment.SuspendLayout();
+            this.pnlCashPayment.SuspendLayout();
+            this.pnlEndPayment.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlPaymentHomeScreen
             // 
-            this.pnlPaymentHomeScreen.Controls.Add(this.pnlPaymentOptions);
             this.pnlPaymentHomeScreen.Controls.Add(this.lblOrderId);
             this.pnlPaymentHomeScreen.Controls.Add(this.pnlCalculator);
             this.pnlPaymentHomeScreen.Controls.Add(this.btnProceedToCheckout);
@@ -111,111 +175,6 @@ namespace ChapeauUI
             this.pnlPaymentHomeScreen.Name = "pnlPaymentHomeScreen";
             this.pnlPaymentHomeScreen.Size = new System.Drawing.Size(393, 807);
             this.pnlPaymentHomeScreen.TabIndex = 5;
-            // 
-            // pnlPaymentOptions
-            // 
-            this.pnlPaymentOptions.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlPaymentOptions.Controls.Add(this.btnCredit);
-            this.pnlPaymentOptions.Controls.Add(this.btnVisa);
-            this.pnlPaymentOptions.Controls.Add(this.btnDebit);
-            this.pnlPaymentOptions.Controls.Add(this.btnpin);
-            this.pnlPaymentOptions.Controls.Add(this.btnMasterCard);
-            this.pnlPaymentOptions.Controls.Add(this.btnAmericanExpress);
-            this.pnlPaymentOptions.Controls.Add(this.btnCash);
-            this.pnlPaymentOptions.Controls.Add(this.btnBackToPaymentHome);
-            this.pnlPaymentOptions.Location = new System.Drawing.Point(1, 0);
-            this.pnlPaymentOptions.Name = "pnlPaymentOptions";
-            this.pnlPaymentOptions.Size = new System.Drawing.Size(392, 807);
-            this.pnlPaymentOptions.TabIndex = 26;
-            // 
-            // btnCredit
-            // 
-            this.btnCredit.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCredit.Location = new System.Drawing.Point(197, 408);
-            this.btnCredit.Name = "btnCredit";
-            this.btnCredit.Size = new System.Drawing.Size(179, 117);
-            this.btnCredit.TabIndex = 44;
-            this.btnCredit.Text = "Credit";
-            this.btnCredit.UseVisualStyleBackColor = true;
-            this.btnCredit.Click += new System.EventHandler(this.btnCredit_Click);
-            // 
-            // btnVisa
-            // 
-            this.btnVisa.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnVisa.Location = new System.Drawing.Point(10, 408);
-            this.btnVisa.Name = "btnVisa";
-            this.btnVisa.Size = new System.Drawing.Size(179, 117);
-            this.btnVisa.TabIndex = 43;
-            this.btnVisa.Text = "Visa";
-            this.btnVisa.UseVisualStyleBackColor = true;
-            // 
-            // btnDebit
-            // 
-            this.btnDebit.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnDebit.Location = new System.Drawing.Point(197, 257);
-            this.btnDebit.Name = "btnDebit";
-            this.btnDebit.Size = new System.Drawing.Size(179, 117);
-            this.btnDebit.TabIndex = 42;
-            this.btnDebit.Text = "Debit";
-            this.btnDebit.UseVisualStyleBackColor = true;
-            this.btnDebit.Click += new System.EventHandler(this.btnDebit_Click);
-            // 
-            // btnpin
-            // 
-            this.btnpin.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnpin.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnpin.Location = new System.Drawing.Point(8, 257);
-            this.btnpin.Name = "btnpin";
-            this.btnpin.Size = new System.Drawing.Size(179, 117);
-            this.btnpin.TabIndex = 41;
-            this.btnpin.Text = "Pin";
-            this.btnpin.UseVisualStyleBackColor = true;
-            this.btnpin.Click += new System.EventHandler(this.btnpin_Click);
-            // 
-            // btnMasterCard
-            // 
-            this.btnMasterCard.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMasterCard.Location = new System.Drawing.Point(10, 561);
-            this.btnMasterCard.Name = "btnMasterCard";
-            this.btnMasterCard.Size = new System.Drawing.Size(179, 117);
-            this.btnMasterCard.TabIndex = 39;
-            this.btnMasterCard.Text = "Master card";
-            this.btnMasterCard.UseVisualStyleBackColor = true;
-            this.btnMasterCard.Click += new System.EventHandler(this.btnMasterCard_Click);
-            // 
-            // btnAmericanExpress
-            // 
-            this.btnAmericanExpress.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAmericanExpress.Location = new System.Drawing.Point(197, 561);
-            this.btnAmericanExpress.Name = "btnAmericanExpress";
-            this.btnAmericanExpress.Size = new System.Drawing.Size(179, 117);
-            this.btnAmericanExpress.TabIndex = 37;
-            this.btnAmericanExpress.Text = "American Express";
-            this.btnAmericanExpress.UseVisualStyleBackColor = true;
-            this.btnAmericanExpress.Click += new System.EventHandler(this.btnAmericanExpress_Click);
-            // 
-            // btnCash
-            // 
-            this.btnCash.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCash.Location = new System.Drawing.Point(10, 131);
-            this.btnCash.Name = "btnCash";
-            this.btnCash.Size = new System.Drawing.Size(366, 91);
-            this.btnCash.TabIndex = 35;
-            this.btnCash.Text = "Cash";
-            this.btnCash.UseVisualStyleBackColor = true;
-            this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
-            // 
-            // btnBackToPaymentHome
-            // 
-            this.btnBackToPaymentHome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnBackToPaymentHome.Location = new System.Drawing.Point(8, 5);
-            this.btnBackToPaymentHome.Margin = new System.Windows.Forms.Padding(0);
-            this.btnBackToPaymentHome.Name = "btnBackToPaymentHome";
-            this.btnBackToPaymentHome.Size = new System.Drawing.Size(40, 47);
-            this.btnBackToPaymentHome.TabIndex = 31;
-            this.btnBackToPaymentHome.Text = "<";
-            this.btnBackToPaymentHome.UseVisualStyleBackColor = true;
-            this.btnBackToPaymentHome.Click += new System.EventHandler(this.btnBackToPaymentHome_Click);
             // 
             // lblOrderId
             // 
@@ -523,7 +482,7 @@ namespace ChapeauUI
             // lblTableNumber
             // 
             this.lblTableNumber.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTableNumber.Location = new System.Drawing.Point(138, 10);
+            this.lblTableNumber.Location = new System.Drawing.Point(138, 13);
             this.lblTableNumber.Margin = new System.Windows.Forms.Padding(0);
             this.lblTableNumber.Name = "lblTableNumber";
             this.lblTableNumber.Size = new System.Drawing.Size(30, 36);
@@ -683,20 +642,865 @@ namespace ChapeauUI
             this.label7.Text = "Order number:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pnlPaymentOptions
+            // 
+            this.pnlPaymentOptions.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlPaymentOptions.Controls.Add(this.lblPayOpOrderNr);
+            this.pnlPaymentOptions.Controls.Add(this.label13);
+            this.pnlPaymentOptions.Controls.Add(this.label22);
+            this.pnlPaymentOptions.Controls.Add(this.label15);
+            this.pnlPaymentOptions.Controls.Add(this.lblPayOpTableNr);
+            this.pnlPaymentOptions.Controls.Add(this.btnCredit);
+            this.pnlPaymentOptions.Controls.Add(this.btnVisa);
+            this.pnlPaymentOptions.Controls.Add(this.btnDebit);
+            this.pnlPaymentOptions.Controls.Add(this.btnpin);
+            this.pnlPaymentOptions.Controls.Add(this.btnMasterCard);
+            this.pnlPaymentOptions.Controls.Add(this.btnAmericanExpress);
+            this.pnlPaymentOptions.Controls.Add(this.btnCash);
+            this.pnlPaymentOptions.Controls.Add(this.btnBackToPaymentHome);
+            this.pnlPaymentOptions.Location = new System.Drawing.Point(0, 0);
+            this.pnlPaymentOptions.Name = "pnlPaymentOptions";
+            this.pnlPaymentOptions.Size = new System.Drawing.Size(392, 807);
+            this.pnlPaymentOptions.TabIndex = 27;
+            // 
+            // lblPayOpOrderNr
+            // 
+            this.lblPayOpOrderNr.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPayOpOrderNr.Location = new System.Drawing.Point(354, 50);
+            this.lblPayOpOrderNr.Margin = new System.Windows.Forms.Padding(0);
+            this.lblPayOpOrderNr.Name = "lblPayOpOrderNr";
+            this.lblPayOpOrderNr.Size = new System.Drawing.Size(32, 32);
+            this.lblPayOpOrderNr.TabIndex = 28;
+            this.lblPayOpOrderNr.Text = "..";
+            this.lblPayOpOrderNr.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(295, 30);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(44, 20);
+            this.label13.TabIndex = 46;
+            this.label13.Text = "Table";
+            // 
+            // label22
+            // 
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label22.Location = new System.Drawing.Point(230, 52);
+            this.label22.Margin = new System.Windows.Forms.Padding(0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(124, 32);
+            this.label22.TabIndex = 29;
+            this.label22.Text = "Order number:";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label15
+            // 
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(56, 17);
+            this.label15.Margin = new System.Windows.Forms.Padding(0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(246, 41);
+            this.label15.TabIndex = 28;
+            this.label15.Text = "Payment Options";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblPayOpTableNr
+            // 
+            this.lblPayOpTableNr.AutoSize = true;
+            this.lblPayOpTableNr.Location = new System.Drawing.Point(345, 30);
+            this.lblPayOpTableNr.Name = "lblPayOpTableNr";
+            this.lblPayOpTableNr.Size = new System.Drawing.Size(18, 20);
+            this.lblPayOpTableNr.TabIndex = 48;
+            this.lblPayOpTableNr.Text = "...";
+            // 
+            // btnCredit
+            // 
+            this.btnCredit.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCredit.Location = new System.Drawing.Point(197, 408);
+            this.btnCredit.Name = "btnCredit";
+            this.btnCredit.Size = new System.Drawing.Size(179, 117);
+            this.btnCredit.TabIndex = 44;
+            this.btnCredit.Text = "Credit";
+            this.btnCredit.UseVisualStyleBackColor = true;
+            this.btnCredit.Click += new System.EventHandler(this.btnCredit_Click);
+            // 
+            // btnVisa
+            // 
+            this.btnVisa.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnVisa.Location = new System.Drawing.Point(10, 408);
+            this.btnVisa.Name = "btnVisa";
+            this.btnVisa.Size = new System.Drawing.Size(179, 117);
+            this.btnVisa.TabIndex = 43;
+            this.btnVisa.Text = "Visa";
+            this.btnVisa.UseVisualStyleBackColor = true;
+            this.btnVisa.Click += new System.EventHandler(this.btnVisa_Click);
+            // 
+            // btnDebit
+            // 
+            this.btnDebit.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDebit.Location = new System.Drawing.Point(197, 257);
+            this.btnDebit.Name = "btnDebit";
+            this.btnDebit.Size = new System.Drawing.Size(179, 117);
+            this.btnDebit.TabIndex = 42;
+            this.btnDebit.Text = "Debit";
+            this.btnDebit.UseVisualStyleBackColor = true;
+            this.btnDebit.Click += new System.EventHandler(this.btnDebit_Click);
+            // 
+            // btnpin
+            // 
+            this.btnpin.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnpin.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnpin.Location = new System.Drawing.Point(8, 257);
+            this.btnpin.Name = "btnpin";
+            this.btnpin.Size = new System.Drawing.Size(179, 117);
+            this.btnpin.TabIndex = 41;
+            this.btnpin.Text = "Pin";
+            this.btnpin.UseVisualStyleBackColor = true;
+            this.btnpin.Click += new System.EventHandler(this.btnpin_Click);
+            // 
+            // btnMasterCard
+            // 
+            this.btnMasterCard.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnMasterCard.Location = new System.Drawing.Point(10, 561);
+            this.btnMasterCard.Name = "btnMasterCard";
+            this.btnMasterCard.Size = new System.Drawing.Size(179, 117);
+            this.btnMasterCard.TabIndex = 39;
+            this.btnMasterCard.Text = "Master card";
+            this.btnMasterCard.UseVisualStyleBackColor = true;
+            this.btnMasterCard.Click += new System.EventHandler(this.btnMasterCard_Click);
+            // 
+            // btnAmericanExpress
+            // 
+            this.btnAmericanExpress.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAmericanExpress.Location = new System.Drawing.Point(197, 561);
+            this.btnAmericanExpress.Name = "btnAmericanExpress";
+            this.btnAmericanExpress.Size = new System.Drawing.Size(179, 117);
+            this.btnAmericanExpress.TabIndex = 37;
+            this.btnAmericanExpress.Text = "American Express";
+            this.btnAmericanExpress.UseVisualStyleBackColor = true;
+            this.btnAmericanExpress.Click += new System.EventHandler(this.btnAmericanExpress_Click);
+            // 
+            // btnCash
+            // 
+            this.btnCash.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCash.Location = new System.Drawing.Point(10, 131);
+            this.btnCash.Name = "btnCash";
+            this.btnCash.Size = new System.Drawing.Size(366, 91);
+            this.btnCash.TabIndex = 35;
+            this.btnCash.Text = "Cash";
+            this.btnCash.UseVisualStyleBackColor = true;
+            this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
+            // 
+            // btnBackToPaymentHome
+            // 
+            this.btnBackToPaymentHome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBackToPaymentHome.Location = new System.Drawing.Point(8, 5);
+            this.btnBackToPaymentHome.Margin = new System.Windows.Forms.Padding(0);
+            this.btnBackToPaymentHome.Name = "btnBackToPaymentHome";
+            this.btnBackToPaymentHome.Size = new System.Drawing.Size(40, 47);
+            this.btnBackToPaymentHome.TabIndex = 31;
+            this.btnBackToPaymentHome.Text = "<";
+            this.btnBackToPaymentHome.UseVisualStyleBackColor = true;
+            // 
+            // pnlPay
+            // 
+            this.pnlPay.Controls.Add(this.pnlEndPayment);
+            this.pnlPay.Controls.Add(this.pnlCardPayment);
+            this.pnlPay.Controls.Add(this.lblCashOrderNr);
+            this.pnlPay.Controls.Add(this.label14);
+            this.pnlPay.Controls.Add(this.btnBackToPaymentOptions);
+            this.pnlPay.Controls.Add(this.lblPayTitle);
+            this.pnlPay.Controls.Add(this.lblCashTableId);
+            this.pnlPay.Controls.Add(this.btnPay);
+            this.pnlPay.Controls.Add(this.pnlCashPayment);
+            this.pnlPay.Controls.Add(this.label26);
+            this.pnlPay.Location = new System.Drawing.Point(2, 2);
+            this.pnlPay.Name = "pnlPay";
+            this.pnlPay.Size = new System.Drawing.Size(392, 807);
+            this.pnlPay.TabIndex = 46;
+            // 
+            // pnlCardPayment
+            // 
+            this.pnlCardPayment.BackColor = System.Drawing.Color.LightYellow;
+            this.pnlCardPayment.Controls.Add(this.lblCardTotal);
+            this.pnlCardPayment.Controls.Add(this.label16);
+            this.pnlCardPayment.Controls.Add(this.label10);
+            this.pnlCardPayment.Controls.Add(this.btnCardPayment);
+            this.pnlCardPayment.Location = new System.Drawing.Point(6, 93);
+            this.pnlCardPayment.Name = "pnlCardPayment";
+            this.pnlCardPayment.Size = new System.Drawing.Size(367, 634);
+            this.pnlCardPayment.TabIndex = 51;
+            // 
+            // lblCardTotal
+            // 
+            this.lblCardTotal.AutoSize = true;
+            this.lblCardTotal.BackColor = System.Drawing.Color.LightGray;
+            this.lblCardTotal.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCardTotal.Location = new System.Drawing.Point(161, 295);
+            this.lblCardTotal.Name = "lblCardTotal";
+            this.lblCardTotal.Size = new System.Drawing.Size(24, 32);
+            this.lblCardTotal.TabIndex = 3;
+            this.lblCardTotal.Text = "..";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.LightGray;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label16.Location = new System.Drawing.Point(130, 215);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(108, 31);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "&Amount:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(60, 94);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(198, 32);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Please Tap to pay";
+            // 
+            // btnCardPayment
+            // 
+            this.btnCardPayment.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnCardPayment.Location = new System.Drawing.Point(23, 156);
+            this.btnCardPayment.Name = "btnCardPayment";
+            this.btnCardPayment.Size = new System.Drawing.Size(319, 270);
+            this.btnCardPayment.TabIndex = 0;
+            this.btnCardPayment.Text = " ";
+            this.btnCardPayment.UseVisualStyleBackColor = true;
+            this.btnCardPayment.Click += new System.EventHandler(this.btnCardPayment_Click);
+            // 
+            // lblCashOrderNr
+            // 
+            this.lblCashOrderNr.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCashOrderNr.Location = new System.Drawing.Point(337, 55);
+            this.lblCashOrderNr.Margin = new System.Windows.Forms.Padding(0);
+            this.lblCashOrderNr.Name = "lblCashOrderNr";
+            this.lblCashOrderNr.Size = new System.Drawing.Size(32, 32);
+            this.lblCashOrderNr.TabIndex = 49;
+            this.lblCashOrderNr.Text = "..";
+            this.lblCashOrderNr.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(283, 36);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(53, 23);
+            this.label14.TabIndex = 49;
+            this.label14.Text = "Table:";
+            // 
+            // btnBackToPaymentOptions
+            // 
+            this.btnBackToPaymentOptions.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBackToPaymentOptions.Location = new System.Drawing.Point(10, 20);
+            this.btnBackToPaymentOptions.Margin = new System.Windows.Forms.Padding(0);
+            this.btnBackToPaymentOptions.Name = "btnBackToPaymentOptions";
+            this.btnBackToPaymentOptions.Size = new System.Drawing.Size(40, 47);
+            this.btnBackToPaymentOptions.TabIndex = 49;
+            this.btnBackToPaymentOptions.Text = "<";
+            this.btnBackToPaymentOptions.UseVisualStyleBackColor = true;
+            this.btnBackToPaymentOptions.Click += new System.EventHandler(this.btnBackToPaymentOptions_Click);
+            // 
+            // lblPayTitle
+            // 
+            this.lblPayTitle.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPayTitle.Location = new System.Drawing.Point(58, 20);
+            this.lblPayTitle.Margin = new System.Windows.Forms.Padding(0);
+            this.lblPayTitle.Name = "lblPayTitle";
+            this.lblPayTitle.Size = new System.Drawing.Size(209, 41);
+            this.lblPayTitle.TabIndex = 50;
+            this.lblPayTitle.Text = "Cash Payment";
+            this.lblPayTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblCashTableId
+            // 
+            this.lblCashTableId.AutoSize = true;
+            this.lblCashTableId.Location = new System.Drawing.Point(333, 36);
+            this.lblCashTableId.Name = "lblCashTableId";
+            this.lblCashTableId.Size = new System.Drawing.Size(18, 20);
+            this.lblCashTableId.TabIndex = 47;
+            this.lblCashTableId.Text = "...";
+            // 
+            // btnPay
+            // 
+            this.btnPay.Enabled = false;
+            this.btnPay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnPay.Location = new System.Drawing.Point(253, 746);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(122, 48);
+            this.btnPay.TabIndex = 1;
+            this.btnPay.Text = "Pay";
+            this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
+            // 
+            // pnlCashPayment
+            // 
+            this.pnlCashPayment.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.pnlCashPayment.Controls.Add(this.txtCashEnter);
+            this.pnlCashPayment.Controls.Add(this.lblChange);
+            this.pnlCashPayment.Controls.Add(this.label12);
+            this.pnlCashPayment.Controls.Add(this.label11);
+            this.pnlCashPayment.Controls.Add(this.lblCashTotalPrice);
+            this.pnlCashPayment.Controls.Add(this.label3);
+            this.pnlCashPayment.Controls.Add(this.button18);
+            this.pnlCashPayment.Controls.Add(this.button19);
+            this.pnlCashPayment.Controls.Add(this.button20);
+            this.pnlCashPayment.Controls.Add(this.button21);
+            this.pnlCashPayment.Controls.Add(this.btnCashDel);
+            this.pnlCashPayment.Controls.Add(this.button13);
+            this.pnlCashPayment.Controls.Add(this.button14);
+            this.pnlCashPayment.Controls.Add(this.button15);
+            this.pnlCashPayment.Controls.Add(this.button16);
+            this.pnlCashPayment.Controls.Add(this.btnCashClear);
+            this.pnlCashPayment.Controls.Add(this.button8);
+            this.pnlCashPayment.Controls.Add(this.button9);
+            this.pnlCashPayment.Controls.Add(this.button10);
+            this.pnlCashPayment.Controls.Add(this.button11);
+            this.pnlCashPayment.Controls.Add(this.button6);
+            this.pnlCashPayment.Controls.Add(this.button5);
+            this.pnlCashPayment.Controls.Add(this.button3);
+            this.pnlCashPayment.Controls.Add(this.button4);
+            this.pnlCashPayment.Controls.Add(this.btnCashCal);
+            this.pnlCashPayment.Location = new System.Drawing.Point(6, 93);
+            this.pnlCashPayment.Name = "pnlCashPayment";
+            this.pnlCashPayment.Size = new System.Drawing.Size(367, 634);
+            this.pnlCashPayment.TabIndex = 0;
+            // 
+            // txtCashEnter
+            // 
+            this.txtCashEnter.BackColor = System.Drawing.Color.LightGray;
+            this.txtCashEnter.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCashEnter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCashEnter.Location = new System.Drawing.Point(119, 123);
+            this.txtCashEnter.Name = "txtCashEnter";
+            this.txtCashEnter.Size = new System.Drawing.Size(86, 27);
+            this.txtCashEnter.TabIndex = 25;
+            // 
+            // lblChange
+            // 
+            this.lblChange.AutoSize = true;
+            this.lblChange.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblChange.Location = new System.Drawing.Point(176, 193);
+            this.lblChange.Name = "lblChange";
+            this.lblChange.Size = new System.Drawing.Size(24, 28);
+            this.lblChange.TabIndex = 24;
+            this.lblChange.Text = "...";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(13, 193);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(96, 32);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Change";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(13, 123);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(69, 32);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "Enter";
+            // 
+            // lblCashTotalPrice
+            // 
+            this.lblCashTotalPrice.AutoSize = true;
+            this.lblCashTotalPrice.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCashTotalPrice.Location = new System.Drawing.Point(179, 70);
+            this.lblCashTotalPrice.Name = "lblCashTotalPrice";
+            this.lblCashTotalPrice.Size = new System.Drawing.Size(32, 31);
+            this.lblCashTotalPrice.TabIndex = 21;
+            this.lblCashTotalPrice.Text = "...";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(13, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(160, 32);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Amount due: ";
+            // 
+            // button18
+            // 
+            this.button18.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button18.Location = new System.Drawing.Point(133, 529);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(57, 55);
+            this.button18.TabIndex = 19;
+            this.button18.Text = "00";
+            this.button18.UseVisualStyleBackColor = false;
+            this.button18.Click += new System.EventHandler(this.btnCashCal_Click);
+            // 
+            // button19
+            // 
+            this.button19.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button19.Location = new System.Drawing.Point(73, 529);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(57, 55);
+            this.button19.TabIndex = 18;
+            this.button19.Text = "0";
+            this.button19.UseVisualStyleBackColor = false;
+            this.button19.Click += new System.EventHandler(this.btnCashCal_Click);
+            // 
+            // button20
+            // 
+            this.button20.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button20.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button20.Location = new System.Drawing.Point(193, 529);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(73, 55);
+            this.button20.TabIndex = 17;
+            this.button20.Text = "100,00";
+            this.button20.UseVisualStyleBackColor = false;
+            this.button20.Click += new System.EventHandler(this.btnCashCal_Click);
+            // 
+            // button21
+            // 
+            this.button21.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button21.Location = new System.Drawing.Point(13, 529);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(57, 55);
+            this.button21.TabIndex = 16;
+            this.button21.Text = ",";
+            this.button21.UseVisualStyleBackColor = false;
+            this.button21.Click += new System.EventHandler(this.btnCashCal_Click);
+            // 
+            // btnCashDel
+            // 
+            this.btnCashDel.BackColor = System.Drawing.Color.LightCoral;
+            this.btnCashDel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCashDel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCashDel.Location = new System.Drawing.Point(272, 464);
+            this.btnCashDel.Name = "btnCashDel";
+            this.btnCashDel.Size = new System.Drawing.Size(73, 120);
+            this.btnCashDel.TabIndex = 15;
+            this.btnCashDel.Text = "DEL";
+            this.btnCashDel.UseVisualStyleBackColor = false;
+            this.btnCashDel.Click += new System.EventHandler(this.btnCashDel_Click);
+            // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button13.Location = new System.Drawing.Point(133, 464);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(57, 55);
+            this.button13.TabIndex = 14;
+            this.button13.Text = "0";
+            this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.btnCashCal_Click);
+            // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button14.Location = new System.Drawing.Point(73, 464);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(57, 55);
+            this.button14.TabIndex = 13;
+            this.button14.Text = "8";
+            this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.btnCashCal_Click);
+            // 
+            // button15
+            // 
+            this.button15.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button15.Location = new System.Drawing.Point(193, 464);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(73, 55);
+            this.button15.TabIndex = 12;
+            this.button15.Text = "50,00";
+            this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.btnCashCal_Click);
+            // 
+            // button16
+            // 
+            this.button16.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button16.Location = new System.Drawing.Point(13, 464);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(57, 55);
+            this.button16.TabIndex = 11;
+            this.button16.Text = "7";
+            this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.btnCashCal_Click);
+            // 
+            // btnCashClear
+            // 
+            this.btnCashClear.BackColor = System.Drawing.Color.LightGray;
+            this.btnCashClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCashClear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCashClear.Location = new System.Drawing.Point(272, 403);
+            this.btnCashClear.Name = "btnCashClear";
+            this.btnCashClear.Size = new System.Drawing.Size(73, 55);
+            this.btnCashClear.TabIndex = 10;
+            this.btnCashClear.Text = "Clear";
+            this.btnCashClear.UseVisualStyleBackColor = false;
+            this.btnCashClear.Click += new System.EventHandler(this.btnCashClear_Click);
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button8.Location = new System.Drawing.Point(133, 403);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(57, 55);
+            this.button8.TabIndex = 9;
+            this.button8.Text = "6";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.btnCashCal_Click);
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button9.Location = new System.Drawing.Point(73, 403);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(57, 55);
+            this.button9.TabIndex = 8;
+            this.button9.Text = "5";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.btnCashCal_Click);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button10.Location = new System.Drawing.Point(193, 403);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(73, 55);
+            this.button10.TabIndex = 7;
+            this.button10.Text = "20,00";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.btnCashCal_Click);
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button11.Location = new System.Drawing.Point(13, 403);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(57, 55);
+            this.button11.TabIndex = 6;
+            this.button11.Text = "4";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.btnCashCal_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button6.Location = new System.Drawing.Point(272, 342);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(73, 55);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "5,00";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.btnCashCal_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button5.Location = new System.Drawing.Point(133, 342);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(57, 55);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "3";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.btnCashCal_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button3.Location = new System.Drawing.Point(73, 342);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(57, 55);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "2";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.btnCashCal_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button4.Location = new System.Drawing.Point(193, 342);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(73, 55);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "10,00";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.btnCashCal_Click);
+            // 
+            // btnCashCal
+            // 
+            this.btnCashCal.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCashCal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCashCal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCashCal.Location = new System.Drawing.Point(13, 342);
+            this.btnCashCal.Name = "btnCashCal";
+            this.btnCashCal.Size = new System.Drawing.Size(57, 55);
+            this.btnCashCal.TabIndex = 0;
+            this.btnCashCal.Text = "1";
+            this.btnCashCal.UseVisualStyleBackColor = false;
+            this.btnCashCal.Click += new System.EventHandler(this.btnCashCal_Click);
+            // 
+            // label26
+            // 
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label26.Location = new System.Drawing.Point(213, 54);
+            this.label26.Margin = new System.Windows.Forms.Padding(0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(124, 32);
+            this.label26.TabIndex = 50;
+            this.label26.Text = "Order number:";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pnlEndPayment
+            // 
+            this.pnlEndPayment.Controls.Add(this.lblFreeTableEnd);
+            this.pnlEndPayment.Controls.Add(this.label24);
+            this.pnlEndPayment.Controls.Add(this.lbltableIdEnd2);
+            this.pnlEndPayment.Controls.Add(this.label19);
+            this.pnlEndPayment.Controls.Add(this.label18);
+            this.pnlEndPayment.Controls.Add(this.txtFeedback);
+            this.pnlEndPayment.Controls.Add(this.label20);
+            this.pnlEndPayment.Controls.Add(this.lblEndPaymentResult);
+            this.pnlEndPayment.Controls.Add(this.lblOrdernrEnd2);
+            this.pnlEndPayment.Controls.Add(this.label17);
+            this.pnlEndPayment.Controls.Add(this.lblOrderNrEnd);
+            this.pnlEndPayment.Controls.Add(this.label21);
+            this.pnlEndPayment.Controls.Add(this.button7);
+            this.pnlEndPayment.Controls.Add(this.label23);
+            this.pnlEndPayment.Controls.Add(this.lblTableIdEnd);
+            this.pnlEndPayment.Controls.Add(this.label31);
+            this.pnlEndPayment.Location = new System.Drawing.Point(0, 0);
+            this.pnlEndPayment.Name = "pnlEndPayment";
+            this.pnlEndPayment.Size = new System.Drawing.Size(392, 807);
+            this.pnlEndPayment.TabIndex = 53;
+            // 
+            // lblFreeTableEnd
+            // 
+            this.lblFreeTableEnd.AutoSize = true;
+            this.lblFreeTableEnd.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblFreeTableEnd.Location = new System.Drawing.Point(200, 395);
+            this.lblFreeTableEnd.Name = "lblFreeTableEnd";
+            this.lblFreeTableEnd.Size = new System.Drawing.Size(32, 31);
+            this.lblFreeTableEnd.TabIndex = 60;
+            this.lblFreeTableEnd.Text = "...";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label24.Location = new System.Drawing.Point(119, 395);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(80, 31);
+            this.label24.TabIndex = 59;
+            this.label24.Text = "is now";
+            // 
+            // lbltableIdEnd2
+            // 
+            this.lbltableIdEnd2.AutoSize = true;
+            this.lbltableIdEnd2.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbltableIdEnd2.Location = new System.Drawing.Point(89, 395);
+            this.lbltableIdEnd2.Name = "lbltableIdEnd2";
+            this.lbltableIdEnd2.Size = new System.Drawing.Size(27, 31);
+            this.lbltableIdEnd2.TabIndex = 58;
+            this.lbltableIdEnd2.Text = "0";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label19.Location = new System.Drawing.Point(29, 395);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(69, 31);
+            this.label19.TabIndex = 57;
+            this.label19.Text = "Table";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label18.Location = new System.Drawing.Point(31, 557);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(99, 28);
+            this.label18.TabIndex = 56;
+            this.label18.Text = "Feedback:";
+            // 
+            // txtFeedback
+            // 
+            this.txtFeedback.BackColor = System.Drawing.Color.LightGray;
+            this.txtFeedback.Location = new System.Drawing.Point(29, 591);
+            this.txtFeedback.Multiline = true;
+            this.txtFeedback.Name = "txtFeedback";
+            this.txtFeedback.Size = new System.Drawing.Size(292, 100);
+            this.txtFeedback.TabIndex = 55;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label20.Location = new System.Drawing.Point(333, 235);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(30, 31);
+            this.label20.TabIndex = 54;
+            this.label20.Text = "is";
+            // 
+            // lblEndPaymentResult
+            // 
+            this.lblEndPaymentResult.AutoSize = true;
+            this.lblEndPaymentResult.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblEndPaymentResult.Location = new System.Drawing.Point(119, 311);
+            this.lblEndPaymentResult.Name = "lblEndPaymentResult";
+            this.lblEndPaymentResult.Size = new System.Drawing.Size(38, 31);
+            this.lblEndPaymentResult.TabIndex = 53;
+            this.lblEndPaymentResult.Text = "....";
+            // 
+            // lblOrdernrEnd2
+            // 
+            this.lblOrdernrEnd2.AutoSize = true;
+            this.lblOrdernrEnd2.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblOrdernrEnd2.Location = new System.Drawing.Point(305, 235);
+            this.lblOrdernrEnd2.Name = "lblOrdernrEnd2";
+            this.lblOrdernrEnd2.Size = new System.Drawing.Size(27, 31);
+            this.lblOrdernrEnd2.TabIndex = 52;
+            this.lblOrdernrEnd2.Text = "0";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label17.Location = new System.Drawing.Point(21, 235);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(291, 31);
+            this.label17.TabIndex = 51;
+            this.label17.Text = "Payment for order number";
+            // 
+            // lblOrderNrEnd
+            // 
+            this.lblOrderNrEnd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblOrderNrEnd.Location = new System.Drawing.Point(337, 55);
+            this.lblOrderNrEnd.Margin = new System.Windows.Forms.Padding(0);
+            this.lblOrderNrEnd.Name = "lblOrderNrEnd";
+            this.lblOrderNrEnd.Size = new System.Drawing.Size(32, 32);
+            this.lblOrderNrEnd.TabIndex = 49;
+            this.lblOrderNrEnd.Text = "..";
+            this.lblOrderNrEnd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label21.Location = new System.Drawing.Point(283, 36);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(53, 23);
+            this.label21.TabIndex = 49;
+            this.label21.Text = "Table:";
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button7.Location = new System.Drawing.Point(10, 20);
+            this.button7.Margin = new System.Windows.Forms.Padding(0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(40, 47);
+            this.button7.TabIndex = 49;
+            this.button7.Text = "<";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label23.Location = new System.Drawing.Point(58, 20);
+            this.label23.Margin = new System.Windows.Forms.Padding(0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(209, 41);
+            this.label23.TabIndex = 50;
+            this.label23.Text = "Payment";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblTableIdEnd
+            // 
+            this.lblTableIdEnd.AutoSize = true;
+            this.lblTableIdEnd.Location = new System.Drawing.Point(333, 36);
+            this.lblTableIdEnd.Name = "lblTableIdEnd";
+            this.lblTableIdEnd.Size = new System.Drawing.Size(18, 20);
+            this.lblTableIdEnd.TabIndex = 47;
+            this.lblTableIdEnd.Text = "...";
+            // 
+            // label31
+            // 
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label31.Location = new System.Drawing.Point(213, 54);
+            this.label31.Margin = new System.Windows.Forms.Padding(0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(124, 32);
+            this.label31.TabIndex = 50;
+            this.label31.Text = "Order number:";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(393, 806);
+            this.Controls.Add(this.pnlPay);
+            this.Controls.Add(this.pnlPaymentOptions);
             this.Controls.Add(this.pnlPaymentHomeScreen);
             this.Name = "Payment";
             this.Text = "Payment";
             this.pnlPaymentHomeScreen.ResumeLayout(false);
             this.pnlPaymentHomeScreen.PerformLayout();
-            this.pnlPaymentOptions.ResumeLayout(false);
             this.pnlCalculator.ResumeLayout(false);
             this.pnlCalculator.PerformLayout();
+            this.pnlPaymentOptions.ResumeLayout(false);
+            this.pnlPaymentOptions.PerformLayout();
+            this.pnlPay.ResumeLayout(false);
+            this.pnlPay.PerformLayout();
+            this.pnlCardPayment.ResumeLayout(false);
+            this.pnlCardPayment.PerformLayout();
+            this.pnlCashPayment.ResumeLayout(false);
+            this.pnlCashPayment.PerformLayout();
+            this.pnlEndPayment.ResumeLayout(false);
+            this.pnlEndPayment.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -741,7 +1545,15 @@ namespace ChapeauUI
         private System.Windows.Forms.Button btnCal6;
         private System.Windows.Forms.Button btnCal5;
         private System.Windows.Forms.Button btnCal4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtResult;
+        private System.Windows.Forms.Button btnEnterTotalPrice;
         private System.Windows.Forms.Panel pnlPaymentOptions;
+        private System.Windows.Forms.Label lblPayOpOrderNr;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblPayOpTableNr;
         private System.Windows.Forms.Button btnCredit;
         private System.Windows.Forms.Button btnVisa;
         private System.Windows.Forms.Button btnDebit;
@@ -750,8 +1562,61 @@ namespace ChapeauUI
         private System.Windows.Forms.Button btnAmericanExpress;
         private System.Windows.Forms.Button btnCash;
         private System.Windows.Forms.Button btnBackToPaymentHome;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtResult;
-        private System.Windows.Forms.Button btnEnterTotalPrice;
+        private System.Windows.Forms.Panel pnlPay;
+        private System.Windows.Forms.Label lblCashOrderNr;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnBackToPaymentOptions;
+        private System.Windows.Forms.Label lblPayTitle;
+        private System.Windows.Forms.Label lblCashTableId;
+        private System.Windows.Forms.Button btnPay;
+        private System.Windows.Forms.Panel pnlCashPayment;
+        private System.Windows.Forms.TextBox txtCashEnter;
+        private System.Windows.Forms.Label lblChange;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblCashTotalPrice;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button btnCashDel;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button btnCashClear;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnCashCal;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Panel pnlCardPayment;
+        private System.Windows.Forms.Label lblCardTotal;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnCardPayment;
+        private System.Windows.Forms.Panel pnlEndPayment;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtFeedback;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblEndPaymentResult;
+        private System.Windows.Forms.Label lblOrdernrEnd2;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblOrderNrEnd;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lblTableIdEnd;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label lblFreeTableEnd;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label lbltableIdEnd2;
+        private System.Windows.Forms.Label label19;
     }
 }
