@@ -32,14 +32,11 @@ namespace ChapeauUI
             User user = userService.UserLogin(txtUsername.Text,int.Parse(txtPassword.Text));
             if (user!= null)
             {
-                if (user.Type=="Manager")//ignore
-                {
-
-                }
-                else if(user.Type=="Waiter")
+               
+                 if(user.Type=="Waiter")
                 {
                     // new TableOverviewUI (Order);
-                    new OrderingUI (new Order(1, 1, 0, 1));
+                   // new OrderingUI (new Order(1, 1, 0, ));
                 }
                 else if(user.Type=="cook")
                 {
