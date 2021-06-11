@@ -14,6 +14,8 @@ namespace ChapeauUI
 {
     public partial class LoginUI : Form
     {
+        User CurrentUser { get; set;}
+
         public LoginUI()
         {
             InitializeComponent();
@@ -30,17 +32,18 @@ namespace ChapeauUI
             User user = userService.UserLogin(txtUsername.Text,int.Parse(txtPassword.Text));
             if (user!= null)
             {
-                if (user.Type=="Manager")
+                if (user.Type=="Manager")//ignore
                 {
 
                 }
                 else if(user.Type=="Waiter")
                 {
-
+                    // new TableOverviewUI (Order);
+                    new OrderingUI (new Order(1, 1, 0, 1));
                 }
                 else if(user.Type=="cook")
                 {
-
+                    new KitchenUI(CurrentUser);
                 }
                 else if (user.Type == "Bartender")
                 {

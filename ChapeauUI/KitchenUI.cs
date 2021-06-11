@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ChapeauModel;
 
 namespace ChapeauUI
 {
     public partial class KitchenUI : Form
     {
-        public KitchenUI()
+        public KitchenUI(User loggedInUser)
         {
             InitializeComponent();
         }
