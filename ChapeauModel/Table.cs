@@ -13,7 +13,7 @@ namespace ChapeauModel
 
         public Table()
         {
-
+        
         }
 
         public Table(int tableId,bool status)

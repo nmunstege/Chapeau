@@ -51,6 +51,8 @@ namespace ChapeauDAL
             return ReadTable(ExecuteSelectQuery(query, sqlParameters));
         }
 
+        
+
         public void AddOrderItem(OrderItem orderItem)
         {
             string query = "INSERT INTO Orders_Items (Item_no, Order_no, Status, Count, Comment) " +

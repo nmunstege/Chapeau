@@ -31,7 +31,7 @@ namespace ChapeauUI
         private void btnRemove_Click(object sender, EventArgs e)
         {
             var parentForm = this.FindForm() as TempOrderItemsForm;
-
+            
             if (OrderItem.Count > 1)
             {
                 OrderItem.Count--;
