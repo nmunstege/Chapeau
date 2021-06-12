@@ -39,14 +39,14 @@ namespace ChapeauUI
 
             bill = new Bill();
             bill.Order = orderService.GetOrder(1);
-            lblTableNumber.Text = bill.Order.TableId.ToString();
+            lblTableNumber.Text = bill.Order.Table.TableId.ToString();
             lblOrderId.Text = bill.Order.Id.ToString();
 
-            OrderItemService orderItemService = new OrderItemService();
+            //OrderItemService orderItemService = new OrderItemService();
            
            
             //fill list in order with orderitems 
-            orderItemService.FillOrderWithOrderItems(bill.Order);
+            //orderItemService.FillOrderWithOrderItems(bill.Order);
             
             
                //Show order items
@@ -211,7 +211,7 @@ namespace ChapeauUI
         {
 
             BillService billService = new BillService();
-           
+
             bill.OrderId = int.Parse(lblOrderId.Text);
             bill.TotalPrice = double.Parse(txtTotalPrice.Text);
             if (txtTip.Text != "")
@@ -228,10 +228,13 @@ namespace ChapeauUI
                 bill.Feedback = " ";
             }
             bill.IsPaid = false;
+            
+            if (bill.paymentMethod == null)
+            {
+                bill.paymentMethod = " ";
+            }
+            bill.BillId = bill.Order.BillId;
             billService.AddBill(bill);
-            
-            
-
             LoadPaymentOptions();
         }
 
@@ -254,7 +257,7 @@ namespace ChapeauUI
 
         private void btnCash_Click(object sender, EventArgs e)
         {
-            LoadCashPayment();
+            LoadCashPayment(PaymentMethods.cash);
         }
 
         private void btnpin_Click(object sender, EventArgs e)
@@ -286,7 +289,7 @@ namespace ChapeauUI
         {
             LoadCardPayment(PaymentMethods.visa);
         }
-        void LoadCashPayment()
+        void LoadCashPayment(PaymentMethods paymentMethod)
         {
             
             pnlPaymentHomeScreen.Hide();
@@ -297,12 +300,14 @@ namespace ChapeauUI
 
             pnlPay.Show();
             pnlCashPayment.Show();
+            btnPay.Show();
 
-            lblCashOrderNr.Text = bill.OrderId.ToString();
-           lblCashTableId.Text = bill.Order.TableId.ToString();
+            lblCashOrderNr.Text = bill.Order.ToString();
+           lblCashTableId.Text = bill.Order.Table.TableId.ToString();
             lblCashTotalPrice.Text = bill.TotalPrice.ToString();
             lblPayTitle.Text = "Cash Payment";
-            btnPay.Show();
+
+            bill.paymentMethod = paymentMethod.ToString();
         }
 
         private void btnCashCal_Click(object sender, EventArgs e)
@@ -382,11 +387,13 @@ namespace ChapeauUI
             lblPayTitle.Text = "Card Payment";
             btnPay.Hide();
 
-             lblCashTableId.Text = bill.Order.TableId.ToString();
+             lblCashTableId.Text = bill.Order.Table.TableId.ToString();
+            lblCashOrderNr.Text = bill.Order.Id.ToString();
             lblCashTotalPrice.Text = bill.TotalPrice.ToString();
-            bill.paymentMethod = paymentMethod;
+            bill.paymentMethod = paymentMethod.ToString();
 
-            // LoadFinishPayment();
+            lblCardTotal.Text = bill.TotalPrice.ToString();
+
         }
         private void btnCardPayment_Click(object sender, EventArgs e)
         {
@@ -416,7 +423,7 @@ namespace ChapeauUI
             pnlPaymentOptions.Hide();
 
             pnlEndPayment.Show();
-             lblTableIdEnd.Text = bill.Order.TableId.ToString();
+             lblTableIdEnd.Text = bill.Order.Table.TableId.ToString();
             lbltableIdEnd2.Text = lblTableIdEnd.Text;
             lblOrderNrEnd.Text = bill.OrderId.ToString();
             lblOrdernrEnd2.Text = lblOrderNrEnd.Text;
@@ -426,6 +433,7 @@ namespace ChapeauUI
             ShowOrderResult();
             BillService billService = new BillService();
             billService.UpdateBill(bill);
+           
         }
         
 
@@ -450,5 +458,21 @@ namespace ChapeauUI
             }
 
         }
+
+        private void btnBackFinishPayment_Click(object sender, EventArgs e)
+        {
+            BillService billService = new BillService();
+           
+            if (txtFeedback.Text!= "")
+            {
+                bill.Feedback = txtFeedback.Text;
+                billService.UpdateBill(bill);
+            }
+            
+            // Show table overview
+            
+        }
+
+        
     }
 }

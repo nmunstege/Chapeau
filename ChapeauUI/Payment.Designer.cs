@@ -29,6 +29,7 @@ namespace ChapeauUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Payment));
             this.pnlPaymentHomeScreen = new System.Windows.Forms.Panel();
             this.lblOrderId = new System.Windows.Forms.Label();
             this.pnlCalculator = new System.Windows.Forms.Panel();
@@ -85,6 +86,24 @@ namespace ChapeauUI
             this.btnAmericanExpress = new System.Windows.Forms.Button();
             this.btnCash = new System.Windows.Forms.Button();
             this.btnBackToPaymentHome = new System.Windows.Forms.Button();
+            this.pnlEndPayment = new System.Windows.Forms.Panel();
+            this.btnBackFinishPayment = new System.Windows.Forms.Button();
+            this.lblFreeTableEnd = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.lbltableIdEnd2 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtFeedback = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.lblEndPaymentResult = new System.Windows.Forms.Label();
+            this.lblOrdernrEnd2 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.lblOrderNrEnd = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.lblTableIdEnd = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.pnlPay = new System.Windows.Forms.Panel();
             this.pnlCardPayment = new System.Windows.Forms.Panel();
             this.lblCardTotal = new System.Windows.Forms.Label();
@@ -124,30 +143,13 @@ namespace ChapeauUI
             this.button4 = new System.Windows.Forms.Button();
             this.btnCashCal = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
-            this.pnlEndPayment = new System.Windows.Forms.Panel();
-            this.lblFreeTableEnd = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.lbltableIdEnd2 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtFeedback = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.lblEndPaymentResult = new System.Windows.Forms.Label();
-            this.lblOrdernrEnd2 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.lblOrderNrEnd = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
-            this.lblTableIdEnd = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
             this.pnlPaymentHomeScreen.SuspendLayout();
             this.pnlCalculator.SuspendLayout();
             this.pnlPaymentOptions.SuspendLayout();
+            this.pnlEndPayment.SuspendLayout();
             this.pnlPay.SuspendLayout();
             this.pnlCardPayment.SuspendLayout();
             this.pnlCashPayment.SuspendLayout();
-            this.pnlEndPayment.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlPaymentHomeScreen
@@ -461,7 +463,7 @@ namespace ChapeauUI
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(168, 10);
+            this.label2.Location = new System.Drawing.Point(158, 3);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(145, 40);
@@ -482,7 +484,7 @@ namespace ChapeauUI
             // lblTableNumber
             // 
             this.lblTableNumber.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTableNumber.Location = new System.Drawing.Point(138, 13);
+            this.lblTableNumber.Location = new System.Drawing.Point(130, 5);
             this.lblTableNumber.Margin = new System.Windows.Forms.Padding(0);
             this.lblTableNumber.Name = "lblTableNumber";
             this.lblTableNumber.Size = new System.Drawing.Size(30, 36);
@@ -503,7 +505,7 @@ namespace ChapeauUI
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(59, 9);
+            this.label1.Location = new System.Drawing.Point(52, 4);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 41);
@@ -661,7 +663,7 @@ namespace ChapeauUI
             this.pnlPaymentOptions.Location = new System.Drawing.Point(0, 0);
             this.pnlPaymentOptions.Name = "pnlPaymentOptions";
             this.pnlPaymentOptions.Size = new System.Drawing.Size(392, 807);
-            this.pnlPaymentOptions.TabIndex = 27;
+            this.pnlPaymentOptions.TabIndex = 28;
             // 
             // lblPayOpOrderNr
             // 
@@ -677,9 +679,10 @@ namespace ChapeauUI
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label13.Location = new System.Drawing.Point(295, 30);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(44, 20);
+            this.label13.Size = new System.Drawing.Size(49, 23);
             this.label13.TabIndex = 46;
             this.label13.Text = "Table";
             // 
@@ -708,47 +711,56 @@ namespace ChapeauUI
             // lblPayOpTableNr
             // 
             this.lblPayOpTableNr.AutoSize = true;
+            this.lblPayOpTableNr.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblPayOpTableNr.Location = new System.Drawing.Point(345, 30);
             this.lblPayOpTableNr.Name = "lblPayOpTableNr";
-            this.lblPayOpTableNr.Size = new System.Drawing.Size(18, 20);
+            this.lblPayOpTableNr.Size = new System.Drawing.Size(22, 23);
             this.lblPayOpTableNr.TabIndex = 48;
             this.lblPayOpTableNr.Text = "...";
             // 
             // btnCredit
             // 
+            this.btnCredit.BackColor = System.Drawing.Color.LightYellow;
+            this.btnCredit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCredit.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCredit.Location = new System.Drawing.Point(197, 408);
             this.btnCredit.Name = "btnCredit";
             this.btnCredit.Size = new System.Drawing.Size(179, 117);
             this.btnCredit.TabIndex = 44;
             this.btnCredit.Text = "Credit";
-            this.btnCredit.UseVisualStyleBackColor = true;
+            this.btnCredit.UseVisualStyleBackColor = false;
             this.btnCredit.Click += new System.EventHandler(this.btnCredit_Click);
             // 
             // btnVisa
             // 
+            this.btnVisa.BackColor = System.Drawing.Color.LightYellow;
+            this.btnVisa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVisa.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnVisa.Location = new System.Drawing.Point(10, 408);
             this.btnVisa.Name = "btnVisa";
             this.btnVisa.Size = new System.Drawing.Size(179, 117);
             this.btnVisa.TabIndex = 43;
             this.btnVisa.Text = "Visa";
-            this.btnVisa.UseVisualStyleBackColor = true;
+            this.btnVisa.UseVisualStyleBackColor = false;
             this.btnVisa.Click += new System.EventHandler(this.btnVisa_Click);
             // 
             // btnDebit
             // 
+            this.btnDebit.BackColor = System.Drawing.Color.LightYellow;
+            this.btnDebit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDebit.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDebit.Location = new System.Drawing.Point(197, 257);
             this.btnDebit.Name = "btnDebit";
             this.btnDebit.Size = new System.Drawing.Size(179, 117);
             this.btnDebit.TabIndex = 42;
             this.btnDebit.Text = "Debit";
-            this.btnDebit.UseVisualStyleBackColor = true;
+            this.btnDebit.UseVisualStyleBackColor = false;
             this.btnDebit.Click += new System.EventHandler(this.btnDebit_Click);
             // 
             // btnpin
             // 
+            this.btnpin.BackColor = System.Drawing.Color.LightYellow;
+            this.btnpin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnpin.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnpin.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnpin.Location = new System.Drawing.Point(8, 257);
@@ -756,40 +768,46 @@ namespace ChapeauUI
             this.btnpin.Size = new System.Drawing.Size(179, 117);
             this.btnpin.TabIndex = 41;
             this.btnpin.Text = "Pin";
-            this.btnpin.UseVisualStyleBackColor = true;
+            this.btnpin.UseVisualStyleBackColor = false;
             this.btnpin.Click += new System.EventHandler(this.btnpin_Click);
             // 
             // btnMasterCard
             // 
+            this.btnMasterCard.BackColor = System.Drawing.Color.LightYellow;
+            this.btnMasterCard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMasterCard.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnMasterCard.Location = new System.Drawing.Point(10, 561);
             this.btnMasterCard.Name = "btnMasterCard";
             this.btnMasterCard.Size = new System.Drawing.Size(179, 117);
             this.btnMasterCard.TabIndex = 39;
             this.btnMasterCard.Text = "Master card";
-            this.btnMasterCard.UseVisualStyleBackColor = true;
+            this.btnMasterCard.UseVisualStyleBackColor = false;
             this.btnMasterCard.Click += new System.EventHandler(this.btnMasterCard_Click);
             // 
             // btnAmericanExpress
             // 
+            this.btnAmericanExpress.BackColor = System.Drawing.Color.LightYellow;
+            this.btnAmericanExpress.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAmericanExpress.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAmericanExpress.Location = new System.Drawing.Point(197, 561);
             this.btnAmericanExpress.Name = "btnAmericanExpress";
             this.btnAmericanExpress.Size = new System.Drawing.Size(179, 117);
             this.btnAmericanExpress.TabIndex = 37;
             this.btnAmericanExpress.Text = "American Express";
-            this.btnAmericanExpress.UseVisualStyleBackColor = true;
+            this.btnAmericanExpress.UseVisualStyleBackColor = false;
             this.btnAmericanExpress.Click += new System.EventHandler(this.btnAmericanExpress_Click);
             // 
             // btnCash
             // 
+            this.btnCash.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnCash.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCash.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCash.Location = new System.Drawing.Point(10, 131);
             this.btnCash.Name = "btnCash";
             this.btnCash.Size = new System.Drawing.Size(366, 91);
             this.btnCash.TabIndex = 35;
             this.btnCash.Text = "Cash";
-            this.btnCash.UseVisualStyleBackColor = true;
+            this.btnCash.UseVisualStyleBackColor = false;
             this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
             // 
             // btnBackToPaymentHome
@@ -802,6 +820,207 @@ namespace ChapeauUI
             this.btnBackToPaymentHome.TabIndex = 31;
             this.btnBackToPaymentHome.Text = "<";
             this.btnBackToPaymentHome.UseVisualStyleBackColor = true;
+            this.btnBackToPaymentHome.Click += new System.EventHandler(this.btnBackToPaymentHome_Click);
+            // 
+            // pnlEndPayment
+            // 
+            this.pnlEndPayment.Controls.Add(this.btnBackFinishPayment);
+            this.pnlEndPayment.Controls.Add(this.lblFreeTableEnd);
+            this.pnlEndPayment.Controls.Add(this.label24);
+            this.pnlEndPayment.Controls.Add(this.lbltableIdEnd2);
+            this.pnlEndPayment.Controls.Add(this.label19);
+            this.pnlEndPayment.Controls.Add(this.label18);
+            this.pnlEndPayment.Controls.Add(this.txtFeedback);
+            this.pnlEndPayment.Controls.Add(this.label20);
+            this.pnlEndPayment.Controls.Add(this.lblEndPaymentResult);
+            this.pnlEndPayment.Controls.Add(this.lblOrdernrEnd2);
+            this.pnlEndPayment.Controls.Add(this.label17);
+            this.pnlEndPayment.Controls.Add(this.lblOrderNrEnd);
+            this.pnlEndPayment.Controls.Add(this.label21);
+            this.pnlEndPayment.Controls.Add(this.button7);
+            this.pnlEndPayment.Controls.Add(this.label23);
+            this.pnlEndPayment.Controls.Add(this.lblTableIdEnd);
+            this.pnlEndPayment.Controls.Add(this.label31);
+            this.pnlEndPayment.Location = new System.Drawing.Point(8, 8);
+            this.pnlEndPayment.Name = "pnlEndPayment";
+            this.pnlEndPayment.Size = new System.Drawing.Size(392, 807);
+            this.pnlEndPayment.TabIndex = 55;
+            // 
+            // btnBackFinishPayment
+            // 
+            this.btnBackFinishPayment.BackColor = System.Drawing.Color.Silver;
+            this.btnBackFinishPayment.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBackFinishPayment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBackFinishPayment.Location = new System.Drawing.Point(-6, 720);
+            this.btnBackFinishPayment.Name = "btnBackFinishPayment";
+            this.btnBackFinishPayment.Size = new System.Drawing.Size(391, 78);
+            this.btnBackFinishPayment.TabIndex = 61;
+            this.btnBackFinishPayment.Text = "Table Overview";
+            this.btnBackFinishPayment.UseVisualStyleBackColor = false;
+            this.btnBackFinishPayment.Click += new System.EventHandler(this.btnBackFinishPayment_Click);
+            // 
+            // lblFreeTableEnd
+            // 
+            this.lblFreeTableEnd.AutoSize = true;
+            this.lblFreeTableEnd.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblFreeTableEnd.Location = new System.Drawing.Point(200, 395);
+            this.lblFreeTableEnd.Name = "lblFreeTableEnd";
+            this.lblFreeTableEnd.Size = new System.Drawing.Size(32, 31);
+            this.lblFreeTableEnd.TabIndex = 60;
+            this.lblFreeTableEnd.Text = "...";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label24.Location = new System.Drawing.Point(119, 395);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(80, 31);
+            this.label24.TabIndex = 59;
+            this.label24.Text = "is now";
+            // 
+            // lbltableIdEnd2
+            // 
+            this.lbltableIdEnd2.AutoSize = true;
+            this.lbltableIdEnd2.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbltableIdEnd2.Location = new System.Drawing.Point(89, 395);
+            this.lbltableIdEnd2.Name = "lbltableIdEnd2";
+            this.lbltableIdEnd2.Size = new System.Drawing.Size(27, 31);
+            this.lbltableIdEnd2.TabIndex = 58;
+            this.lbltableIdEnd2.Text = "0";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label19.Location = new System.Drawing.Point(29, 395);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(69, 31);
+            this.label19.TabIndex = 57;
+            this.label19.Text = "Table";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label18.Location = new System.Drawing.Point(31, 557);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(99, 28);
+            this.label18.TabIndex = 56;
+            this.label18.Text = "Feedback:";
+            // 
+            // txtFeedback
+            // 
+            this.txtFeedback.BackColor = System.Drawing.Color.LightGray;
+            this.txtFeedback.Location = new System.Drawing.Point(29, 591);
+            this.txtFeedback.Multiline = true;
+            this.txtFeedback.Name = "txtFeedback";
+            this.txtFeedback.Size = new System.Drawing.Size(292, 100);
+            this.txtFeedback.TabIndex = 55;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label20.Location = new System.Drawing.Point(333, 235);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(30, 31);
+            this.label20.TabIndex = 54;
+            this.label20.Text = "is";
+            // 
+            // lblEndPaymentResult
+            // 
+            this.lblEndPaymentResult.AutoSize = true;
+            this.lblEndPaymentResult.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblEndPaymentResult.Location = new System.Drawing.Point(119, 311);
+            this.lblEndPaymentResult.Name = "lblEndPaymentResult";
+            this.lblEndPaymentResult.Size = new System.Drawing.Size(38, 31);
+            this.lblEndPaymentResult.TabIndex = 53;
+            this.lblEndPaymentResult.Text = "....";
+            // 
+            // lblOrdernrEnd2
+            // 
+            this.lblOrdernrEnd2.AutoSize = true;
+            this.lblOrdernrEnd2.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblOrdernrEnd2.Location = new System.Drawing.Point(305, 235);
+            this.lblOrdernrEnd2.Name = "lblOrdernrEnd2";
+            this.lblOrdernrEnd2.Size = new System.Drawing.Size(27, 31);
+            this.lblOrdernrEnd2.TabIndex = 52;
+            this.lblOrdernrEnd2.Text = "0";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label17.Location = new System.Drawing.Point(21, 235);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(291, 31);
+            this.label17.TabIndex = 51;
+            this.label17.Text = "Payment for order number";
+            // 
+            // lblOrderNrEnd
+            // 
+            this.lblOrderNrEnd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblOrderNrEnd.Location = new System.Drawing.Point(337, 55);
+            this.lblOrderNrEnd.Margin = new System.Windows.Forms.Padding(0);
+            this.lblOrderNrEnd.Name = "lblOrderNrEnd";
+            this.lblOrderNrEnd.Size = new System.Drawing.Size(32, 32);
+            this.lblOrderNrEnd.TabIndex = 49;
+            this.lblOrderNrEnd.Text = "..";
+            this.lblOrderNrEnd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label21.Location = new System.Drawing.Point(283, 36);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(53, 23);
+            this.label21.TabIndex = 49;
+            this.label21.Text = "Table:";
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button7.Location = new System.Drawing.Point(10, 20);
+            this.button7.Margin = new System.Windows.Forms.Padding(0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(40, 47);
+            this.button7.TabIndex = 49;
+            this.button7.Text = "<";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.btnBackFinishPayment_Click);
+            // 
+            // label23
+            // 
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label23.Location = new System.Drawing.Point(58, 20);
+            this.label23.Margin = new System.Windows.Forms.Padding(0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(209, 41);
+            this.label23.TabIndex = 50;
+            this.label23.Text = "Payment";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblTableIdEnd
+            // 
+            this.lblTableIdEnd.AutoSize = true;
+            this.lblTableIdEnd.Location = new System.Drawing.Point(333, 36);
+            this.lblTableIdEnd.Name = "lblTableIdEnd";
+            this.lblTableIdEnd.Size = new System.Drawing.Size(18, 20);
+            this.lblTableIdEnd.TabIndex = 47;
+            this.lblTableIdEnd.Text = "...";
+            // 
+            // label31
+            // 
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label31.Location = new System.Drawing.Point(213, 54);
+            this.label31.Margin = new System.Windows.Forms.Padding(0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(124, 32);
+            this.label31.TabIndex = 50;
+            this.label31.Text = "Order number:";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnlPay
             // 
@@ -814,10 +1033,10 @@ namespace ChapeauUI
             this.pnlPay.Controls.Add(this.btnPay);
             this.pnlPay.Controls.Add(this.pnlCashPayment);
             this.pnlPay.Controls.Add(this.label26);
-            this.pnlPay.Location = new System.Drawing.Point(2, 2);
+            this.pnlPay.Location = new System.Drawing.Point(16, 16);
             this.pnlPay.Name = "pnlPay";
             this.pnlPay.Size = new System.Drawing.Size(392, 807);
-            this.pnlPay.TabIndex = 46;
+            this.pnlPay.TabIndex = 57;
             // 
             // pnlCardPayment
             // 
@@ -834,9 +1053,9 @@ namespace ChapeauUI
             // lblCardTotal
             // 
             this.lblCardTotal.AutoSize = true;
-            this.lblCardTotal.BackColor = System.Drawing.Color.LightGray;
+            this.lblCardTotal.BackColor = System.Drawing.Color.White;
             this.lblCardTotal.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCardTotal.Location = new System.Drawing.Point(161, 295);
+            this.lblCardTotal.Location = new System.Drawing.Point(234, 337);
             this.lblCardTotal.Name = "lblCardTotal";
             this.lblCardTotal.Size = new System.Drawing.Size(24, 32);
             this.lblCardTotal.TabIndex = 3;
@@ -845,9 +1064,9 @@ namespace ChapeauUI
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.LightGray;
+            this.label16.BackColor = System.Drawing.Color.White;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(130, 215);
+            this.label16.Location = new System.Drawing.Point(207, 294);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(108, 31);
             this.label16.TabIndex = 2;
@@ -865,13 +1084,15 @@ namespace ChapeauUI
             // 
             // btnCardPayment
             // 
-            this.btnCardPayment.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCardPayment.Location = new System.Drawing.Point(23, 156);
+            this.btnCardPayment.BackColor = System.Drawing.Color.Transparent;
+            this.btnCardPayment.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCardPayment.BackgroundImage")));
+            this.btnCardPayment.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCardPayment.Location = new System.Drawing.Point(23, 160);
             this.btnCardPayment.Name = "btnCardPayment";
             this.btnCardPayment.Size = new System.Drawing.Size(319, 270);
             this.btnCardPayment.TabIndex = 0;
             this.btnCardPayment.Text = " ";
-            this.btnCardPayment.UseVisualStyleBackColor = true;
+            this.btnCardPayment.UseVisualStyleBackColor = false;
             this.btnCardPayment.Click += new System.EventHandler(this.btnCardPayment_Click);
             // 
             // lblCashOrderNr
@@ -1277,7 +1498,6 @@ namespace ChapeauUI
             this.btnCashCal.TabIndex = 0;
             this.btnCashCal.Text = "1";
             this.btnCashCal.UseVisualStyleBackColor = false;
-            this.btnCashCal.Click += new System.EventHandler(this.btnCashCal_Click);
             // 
             // label26
             // 
@@ -1290,199 +1510,14 @@ namespace ChapeauUI
             this.label26.Text = "Order number:";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pnlEndPayment
-            // 
-            this.pnlEndPayment.Controls.Add(this.lblFreeTableEnd);
-            this.pnlEndPayment.Controls.Add(this.label24);
-            this.pnlEndPayment.Controls.Add(this.lbltableIdEnd2);
-            this.pnlEndPayment.Controls.Add(this.label19);
-            this.pnlEndPayment.Controls.Add(this.label18);
-            this.pnlEndPayment.Controls.Add(this.txtFeedback);
-            this.pnlEndPayment.Controls.Add(this.label20);
-            this.pnlEndPayment.Controls.Add(this.lblEndPaymentResult);
-            this.pnlEndPayment.Controls.Add(this.lblOrdernrEnd2);
-            this.pnlEndPayment.Controls.Add(this.label17);
-            this.pnlEndPayment.Controls.Add(this.lblOrderNrEnd);
-            this.pnlEndPayment.Controls.Add(this.label21);
-            this.pnlEndPayment.Controls.Add(this.button7);
-            this.pnlEndPayment.Controls.Add(this.label23);
-            this.pnlEndPayment.Controls.Add(this.lblTableIdEnd);
-            this.pnlEndPayment.Controls.Add(this.label31);
-            this.pnlEndPayment.Location = new System.Drawing.Point(8, 8);
-            this.pnlEndPayment.Name = "pnlEndPayment";
-            this.pnlEndPayment.Size = new System.Drawing.Size(392, 807);
-            this.pnlEndPayment.TabIndex = 54;
-            // 
-            // lblFreeTableEnd
-            // 
-            this.lblFreeTableEnd.AutoSize = true;
-            this.lblFreeTableEnd.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFreeTableEnd.Location = new System.Drawing.Point(200, 395);
-            this.lblFreeTableEnd.Name = "lblFreeTableEnd";
-            this.lblFreeTableEnd.Size = new System.Drawing.Size(32, 31);
-            this.lblFreeTableEnd.TabIndex = 60;
-            this.lblFreeTableEnd.Text = "...";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label24.Location = new System.Drawing.Point(119, 395);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(80, 31);
-            this.label24.TabIndex = 59;
-            this.label24.Text = "is now";
-            // 
-            // lbltableIdEnd2
-            // 
-            this.lbltableIdEnd2.AutoSize = true;
-            this.lbltableIdEnd2.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbltableIdEnd2.Location = new System.Drawing.Point(89, 395);
-            this.lbltableIdEnd2.Name = "lbltableIdEnd2";
-            this.lbltableIdEnd2.Size = new System.Drawing.Size(27, 31);
-            this.lbltableIdEnd2.TabIndex = 58;
-            this.lbltableIdEnd2.Text = "0";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label19.Location = new System.Drawing.Point(29, 395);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(69, 31);
-            this.label19.TabIndex = 57;
-            this.label19.Text = "Table";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(31, 557);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(99, 28);
-            this.label18.TabIndex = 56;
-            this.label18.Text = "Feedback:";
-            // 
-            // txtFeedback
-            // 
-            this.txtFeedback.BackColor = System.Drawing.Color.LightGray;
-            this.txtFeedback.Location = new System.Drawing.Point(29, 591);
-            this.txtFeedback.Multiline = true;
-            this.txtFeedback.Name = "txtFeedback";
-            this.txtFeedback.Size = new System.Drawing.Size(292, 100);
-            this.txtFeedback.TabIndex = 55;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label20.Location = new System.Drawing.Point(333, 235);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(30, 31);
-            this.label20.TabIndex = 54;
-            this.label20.Text = "is";
-            // 
-            // lblEndPaymentResult
-            // 
-            this.lblEndPaymentResult.AutoSize = true;
-            this.lblEndPaymentResult.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblEndPaymentResult.Location = new System.Drawing.Point(119, 311);
-            this.lblEndPaymentResult.Name = "lblEndPaymentResult";
-            this.lblEndPaymentResult.Size = new System.Drawing.Size(38, 31);
-            this.lblEndPaymentResult.TabIndex = 53;
-            this.lblEndPaymentResult.Text = "....";
-            // 
-            // lblOrdernrEnd2
-            // 
-            this.lblOrdernrEnd2.AutoSize = true;
-            this.lblOrdernrEnd2.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblOrdernrEnd2.Location = new System.Drawing.Point(305, 235);
-            this.lblOrdernrEnd2.Name = "lblOrdernrEnd2";
-            this.lblOrdernrEnd2.Size = new System.Drawing.Size(27, 31);
-            this.lblOrdernrEnd2.TabIndex = 52;
-            this.lblOrdernrEnd2.Text = "0";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(21, 235);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(291, 31);
-            this.label17.TabIndex = 51;
-            this.label17.Text = "Payment for order number";
-            // 
-            // lblOrderNrEnd
-            // 
-            this.lblOrderNrEnd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblOrderNrEnd.Location = new System.Drawing.Point(337, 55);
-            this.lblOrderNrEnd.Margin = new System.Windows.Forms.Padding(0);
-            this.lblOrderNrEnd.Name = "lblOrderNrEnd";
-            this.lblOrderNrEnd.Size = new System.Drawing.Size(32, 32);
-            this.lblOrderNrEnd.TabIndex = 49;
-            this.lblOrderNrEnd.Text = "..";
-            this.lblOrderNrEnd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label21.Location = new System.Drawing.Point(283, 36);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(53, 23);
-            this.label21.TabIndex = 49;
-            this.label21.Text = "Table:";
-            // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button7.Location = new System.Drawing.Point(10, 20);
-            this.button7.Margin = new System.Windows.Forms.Padding(0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(40, 47);
-            this.button7.TabIndex = 49;
-            this.button7.Text = "<";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // label23
-            // 
-            this.label23.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label23.Location = new System.Drawing.Point(58, 20);
-            this.label23.Margin = new System.Windows.Forms.Padding(0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(209, 41);
-            this.label23.TabIndex = 50;
-            this.label23.Text = "Payment";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblTableIdEnd
-            // 
-            this.lblTableIdEnd.AutoSize = true;
-            this.lblTableIdEnd.Location = new System.Drawing.Point(333, 36);
-            this.lblTableIdEnd.Name = "lblTableIdEnd";
-            this.lblTableIdEnd.Size = new System.Drawing.Size(18, 20);
-            this.lblTableIdEnd.TabIndex = 47;
-            this.lblTableIdEnd.Text = "...";
-            // 
-            // label31
-            // 
-            this.label31.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label31.Location = new System.Drawing.Point(213, 54);
-            this.label31.Margin = new System.Windows.Forms.Padding(0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(124, 32);
-            this.label31.TabIndex = 50;
-            this.label31.Text = "Order number:";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(393, 806);
-            this.Controls.Add(this.pnlEndPayment);
             this.Controls.Add(this.pnlPay);
+            this.Controls.Add(this.pnlEndPayment);
             this.Controls.Add(this.pnlPaymentOptions);
             this.Controls.Add(this.pnlPaymentHomeScreen);
             this.Name = "Payment";
@@ -1493,14 +1528,14 @@ namespace ChapeauUI
             this.pnlCalculator.PerformLayout();
             this.pnlPaymentOptions.ResumeLayout(false);
             this.pnlPaymentOptions.PerformLayout();
+            this.pnlEndPayment.ResumeLayout(false);
+            this.pnlEndPayment.PerformLayout();
             this.pnlPay.ResumeLayout(false);
             this.pnlPay.PerformLayout();
             this.pnlCardPayment.ResumeLayout(false);
             this.pnlCardPayment.PerformLayout();
             this.pnlCashPayment.ResumeLayout(false);
             this.pnlCashPayment.PerformLayout();
-            this.pnlEndPayment.ResumeLayout(false);
-            this.pnlEndPayment.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1562,7 +1597,30 @@ namespace ChapeauUI
         private System.Windows.Forms.Button btnAmericanExpress;
         private System.Windows.Forms.Button btnCash;
         private System.Windows.Forms.Button btnBackToPaymentHome;
+        private System.Windows.Forms.Panel pnlEndPayment;
+        private System.Windows.Forms.Button btnBackFinishPayment;
+        private System.Windows.Forms.Label lblFreeTableEnd;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label lbltableIdEnd2;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtFeedback;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblEndPaymentResult;
+        private System.Windows.Forms.Label lblOrdernrEnd2;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblOrderNrEnd;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lblTableIdEnd;
+        private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Panel pnlPay;
+        private System.Windows.Forms.Panel pnlCardPayment;
+        private System.Windows.Forms.Label lblCardTotal;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnCardPayment;
         private System.Windows.Forms.Label lblCashOrderNr;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnBackToPaymentOptions;
@@ -1596,27 +1654,5 @@ namespace ChapeauUI
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnCashCal;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Panel pnlCardPayment;
-        private System.Windows.Forms.Label lblCardTotal;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnCardPayment;
-        private System.Windows.Forms.Panel pnlEndPayment;
-        private System.Windows.Forms.Label lblFreeTableEnd;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label lbltableIdEnd2;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtFeedback;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label lblEndPaymentResult;
-        private System.Windows.Forms.Label lblOrdernrEnd2;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label lblOrderNrEnd;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label lblTableIdEnd;
-        private System.Windows.Forms.Label label31;
     }
 }

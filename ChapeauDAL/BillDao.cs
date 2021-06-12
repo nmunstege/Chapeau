@@ -24,7 +24,7 @@ namespace ChapeauDAL
                     Feedback = (string)dr["Feedback"],
                     Tip = (double)dr["Tip"],
                     TotalPrice = (double)dr["Total_Price"],
-                    paymentMethod = (PaymentMethods)dr["Payment_Method"],
+                    paymentMethod = (string)dr["Payment_Method"],
                     IsPaid = (bool)dr["Is_Payed"],
                     Order = orderDao.GetOrderByOrderId((int)dr["Order_no"])
 
@@ -37,17 +37,21 @@ namespace ChapeauDAL
         public void AddBill(Bill bill)
         {
             string query = "INSERT INTO Bills (Order_no,Feedback,Tip,Total_Price,Payment_Method,Is_Payed)" +
-                           "VALUES(@Order_no, @Feedback, @Tip, @Total_Price, @Payment_Method, @Is_Payed)" +
+                           "VALUES(@Order_no, @Feedback, @Tip, @Total_Price, @Payment_Method, @Is_Payed) " +
                            "SELECT SCOPE_IDENTITY();";
             SqlParameter[] sqlParameters =
             {
+
                 new SqlParameter("@Order_no", bill.OrderId),
                 new SqlParameter("@Feedback", bill.Feedback),
                 new SqlParameter("@Tip", bill.Tip),
                 new SqlParameter("@Total_Price", bill.TotalPrice),
-                new SqlParameter("@Payment_Method", bill.paymentMethod.ToString()),
+                new SqlParameter("@Payment_Method", bill.paymentMethod),
                 new SqlParameter("@Is_Payed", bill.IsPaid)
+
             };
+
+            
              ExecuteEditQuery(query, sqlParameters);
 
         }
@@ -56,13 +60,12 @@ namespace ChapeauDAL
         {
             string query = "UPDATE Bills SET Order_no = @Order_no, Feedback = @Feedback,Tip = @Tip, Total_Price = @Total_Price, " +
                            "Payment_Method = @Payment_Method, Is_Payed = @Is_Payed " +
-                           "WHERE Bill_no = @Bill_no";
+                           "WHERE Order_no = @Order_no";
 
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@Bill_no", bill.BillId),
                 new SqlParameter("@Order_no", bill.OrderId),
-                new SqlParameter("@Feedback", bill.Feedback),
+                new SqlParameter("@Feedback", bill.Feedback.ToString()),
                 new SqlParameter("@Tip", bill.Tip),
                 new SqlParameter("@Total_Price", bill.TotalPrice),
                 new SqlParameter("@Payment_Method", bill.paymentMethod.ToString()),

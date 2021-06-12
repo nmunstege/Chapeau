@@ -13,7 +13,7 @@ namespace ChapeauModel
         public string Feedback { get; set; }
         public double Tip { get; set; }
         public double TotalPrice { get; set; }
-        public PaymentMethods paymentMethod { get; set; }
+        public string paymentMethod { get; set; }
         public bool IsPaid { get; set; }
         public Order Order { get; set; }
     }
