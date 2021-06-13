@@ -19,16 +19,11 @@ namespace ChapeauModel
         
         }
 
-        
-
-
-
-
-        //public Table(int tableId,int status)
-        //{
-        //    this.TableId = tableId;
-        //    this.Status = status;
-        //}
+        public Table(int tableId, TableStatus status)
+        {
+            this.TableId = tableId;
+            this.Status = status;
+        }
     }
 
     public enum TableStatus

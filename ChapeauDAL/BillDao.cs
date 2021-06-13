@@ -22,8 +22,8 @@ namespace ChapeauDAL
                     BillId = (int)dr["Bill_no"],
                     OrderId = (int)dr["Order_no"],
                     Feedback = (string)dr["Feedback"],
-                    Tip = (double)dr["Tip"],
-                    TotalPrice = (double)dr["Total_Price"],
+                    Tip = (Decimal)dr["Tip"],
+                    TotalPrice = (Decimal)dr["Total_Price"],
                     paymentMethod = (string)dr["Payment_Method"],
                     IsPaid = (bool)dr["Is_Payed"],
                     Order = orderDao.GetOrderByOrderId((int)dr["Order_no"])
@@ -66,14 +66,16 @@ namespace ChapeauDAL
             {
                 new SqlParameter("@Order_no", bill.OrderId),
                 new SqlParameter("@Feedback", bill.Feedback.ToString()),
-                new SqlParameter("@Tip", bill.Tip),
-                new SqlParameter("@Total_Price", bill.TotalPrice),
+                new SqlParameter("@Tip", Convert.ToDecimal( bill.Tip)),
+                new SqlParameter("@Total_Price", Convert.ToDecimal(bill.TotalPrice)),
                 new SqlParameter("@Payment_Method", bill.paymentMethod.ToString()),
                 new SqlParameter("@Is_Payed", bill.IsPaid)
             };
             ExecuteEditQuery(query, sqlParameters);
 
         }
+
+        
     }
 }
 

@@ -19,12 +19,15 @@ namespace ChapeauUI
         List<Table> Tables { get; set; }
 
         TableService tableService;
+        OrderService orderService;
+
 
         public TableOverview()
         {
             InitializeComponent();
             //CurrentUser = user;
             tableService = new TableService();
+            orderService = new OrderService();
             //ables = tableService.GetAllTables();
             DisplayTables();
         }
