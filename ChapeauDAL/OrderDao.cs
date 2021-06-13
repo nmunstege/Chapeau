@@ -53,5 +53,19 @@ namespace ChapeauDAL
             return ReadTable(ExecuteSelectQuery(query, sqlParameters))[0];
 
         }
+
+        public Order GetOrderByTable(Table table)
+        {
+            string query = "SELECT Order_no, User_no, Bill_no, [Orders].Table_no, [Tables].Status " +
+                           "FROM Orders " +
+                           "INNER JOIN Tables " +
+                           "ON [Orders].Table_no = [Tables].Table_no " +
+                           "WHERE [Orders].Table_no = @tableId ";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("tableId", table.Id)
+            };
+            return ReadTable(ExecuteSelectQuery(query, sqlParameters))[0];
+        }
     }
 }
