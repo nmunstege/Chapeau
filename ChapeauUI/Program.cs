@@ -19,8 +19,9 @@ namespace ChapeauUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new OrderingUI(new Order(1, 1, 0, 1)));
-            Application.Run(new Payment(1));
+            //Application.Run(new Payment(1));
             //Application.Run(new LoginUI());
+            Application.Run(new TableOverview());
         }
     }
 }

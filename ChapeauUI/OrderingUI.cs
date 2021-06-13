@@ -133,6 +133,12 @@ namespace ChapeauUI
             orderItemsForm.ShowDialog();
         }
 
+        private void btnShowOrderTemp_Click_1(object sender, EventArgs e)
+        {
+            TempOrderItemsForm orderItemsForm = new TempOrderItemsForm(this);
+            orderItemsForm.ShowDialog();
+        }
+
         //private void AddOrderItem_ButtonClick(object sender, EventArgs e)
         //{
         //    Item item = (Item)(sender as Button).Tag;

@@ -33,6 +33,15 @@ namespace ChapeauModel
             this.Table = table;
             
         }
+        public Order(int id, int userId, int billId, int tableId)
+        {
+           
+            this.id = id;
+            UserId = userId;
+            BillId = billId;
+            TableId = tableId;
+            
+        }
 
 
     }
