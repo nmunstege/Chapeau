@@ -60,7 +60,8 @@ namespace ChapeauDAL
                            "FROM Orders " +
                            "INNER JOIN Tables " +
                            "ON [Orders].Table_no = [Tables].Table_no " +
-                           "WHERE [Orders].Table_no = @tableId ";
+                           "WHERE [Orders].Table_no = @tableId " +
+                           "AND [Tables] Status = ";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("tableId", table.Id)

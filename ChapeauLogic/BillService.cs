@@ -11,9 +11,11 @@ namespace ChapeauLogic
     public class BillService
     {
         BillDao billDao;
+        TableDao tableDao;
         public BillService()
         {
             billDao = new BillDao();
+            tableDao = new TableDao();
         }
 
         public void  AddBill(Bill bill)
@@ -26,6 +28,7 @@ namespace ChapeauLogic
 
         public void UpdateBill(Bill bill)
         {
+            tableDao.EditTableStatus(bill.Order.Table, TableStatus.Empty);
             billDao.UpdateBill(bill);
         }
 

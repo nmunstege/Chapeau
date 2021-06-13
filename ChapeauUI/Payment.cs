@@ -39,7 +39,7 @@ namespace ChapeauUI
 
             bill = new Bill();
             bill.Order = orderService.GetOrder(1);
-            lblTableNumber.Text = bill.Order.Table.TableId.ToString();
+            lblTableNumber.Text = bill.Order.Table.Id.ToString();
             lblOrderId.Text = bill.Order.Id.ToString();
 
             //OrderItemService orderItemService = new OrderItemService();
@@ -213,10 +213,10 @@ namespace ChapeauUI
             BillService billService = new BillService();
 
             bill.OrderId = int.Parse(lblOrderId.Text);
-            bill.TotalPrice = double.Parse(txtTotalPrice.Text);
+            bill.TotalPrice = Decimal.Parse(txtTotalPrice.Text);
             if (txtTip.Text != "")
             {
-                bill.Tip = double.Parse(txtTip.Text);
+                bill.Tip = Decimal.Parse(txtTip.Text);
             }
             else
             {
@@ -235,6 +235,7 @@ namespace ChapeauUI
             }
             bill.BillId = bill.Order.BillId;
             billService.AddBill(bill);
+
             LoadPaymentOptions();
         }
 
@@ -250,7 +251,7 @@ namespace ChapeauUI
 
             pnlPaymentOptions.Show();
             lblPayOpOrderNr.Text = bill.OrderId.ToString();
-            lblPayOpTableNr.Text = bill.Order.Table.TableId.ToString();
+            lblPayOpTableNr.Text = bill.Order.Table.Id.ToString();
         }
 
         //payment options buttons
@@ -303,7 +304,7 @@ namespace ChapeauUI
             btnPay.Show();
 
             lblCashOrderNr.Text = bill.Order.ToString();
-           lblCashTableId.Text = bill.Order.Table.TableId.ToString();
+            lblCashTableId.Text = bill.Order.Table.Id.ToString();
             lblCashTotalPrice.Text = bill.TotalPrice.ToString();
             lblPayTitle.Text = "Cash Payment";
 
@@ -343,7 +344,7 @@ namespace ChapeauUI
         {
             if (txtCashEnter.Text != "")
             {
-                lblChange.Text = (bill.TotalPrice - double.Parse(txtCashEnter.Text)).ToString("€0.00");
+                lblChange.Text = (bill.TotalPrice - Decimal.Parse(txtCashEnter.Text)).ToString("€0.00");
             }
             else
             {
@@ -387,7 +388,7 @@ namespace ChapeauUI
             lblPayTitle.Text = "Card Payment";
             btnPay.Hide();
 
-             lblCashTableId.Text = bill.Order.Table.TableId.ToString();
+             lblCashTableId.Text = bill.Order.Table.Id.ToString();
             lblCashOrderNr.Text = bill.Order.Id.ToString();
             lblCashTotalPrice.Text = bill.TotalPrice.ToString();
             bill.paymentMethod = paymentMethod.ToString();
@@ -423,13 +424,13 @@ namespace ChapeauUI
             pnlPaymentOptions.Hide();
 
             pnlEndPayment.Show();
-             lblTableIdEnd.Text = bill.Order.Table.TableId.ToString();
+             lblTableIdEnd.Text = bill.Order.Table.Id.ToString();
             lbltableIdEnd2.Text = lblTableIdEnd.Text;
             lblOrderNrEnd.Text = bill.OrderId.ToString();
             lblOrdernrEnd2.Text = lblOrderNrEnd.Text;
             
             // Freeing table in Database
-            bill.Order.Table.Status = 0;
+            bill.Order.Table.Status = TableStatus.Empty;
             ShowOrderResult();
             BillService billService = new BillService();
             billService.UpdateBill(bill);
@@ -448,7 +449,7 @@ namespace ChapeauUI
                 lblEndPaymentResult.Text = "Unsuccessful";
             }
 
-            if (bill.Order.Table.Status == 0)
+            if (bill.Order.Table.Status == TableStatus.Empty)
             {
                 lblFreeTableEnd.Text = "Unoccupied";
             }

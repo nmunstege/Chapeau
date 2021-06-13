@@ -11,8 +11,8 @@ namespace ChapeauModel
         public int BillId { get; set; }
         public int OrderId { get; set; }
         public string Feedback { get; set; }
-        public double Tip { get; set; }
-        public double TotalPrice { get; set; }
+        public Decimal Tip { get; set; }
+        public Decimal TotalPrice { get; set; }
         public string paymentMethod { get; set; }
         public bool IsPaid { get; set; }
         public Order Order { get; set; }
